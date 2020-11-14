@@ -1,0 +1,94 @@
+@font-face {
+    src: url(fonts/Mont-Bold.otf);
+    font-family: mont-bold;
+}
+
+@font-face {
+    src: url(fonts/Mont-Regular.otf);
+    font-family: mont-regular;
+}
+
+body { 
+    margin: 0;
+    padding: 0;
+}
+
+#navBar {
+    width: 100%;
+    height: 63px;
+    background-color: #f3f3f3;
+    position: relative;
+}
+
+#siteName {
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    font-family: mont-bold;
+}
+
+#navBarCenter {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* border: 1px solid red; */
+}
+
+#navBarCenter li {
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 50px;
+    font-family: mont-regular;
+}
+
+#navBarMenu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: absolute;
+    right: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#navBarMenu li {
+    display: inline-block;
+    margin-left: 50px;
+    font-family: mont-regular;
+}
+
+#first {
+    width: 100%;
+    height: 250px;
+    background-color: #72616e;
+}
+
+.title {
+    font-family: mont-bold;
+    font-size: 50px;
+    color: #f3f3f3;
+}
+
+.description {
+    font-family: mont-regular;
+    font-size: 20px;
+    color: #f3f3f3;
+}
+
+#second {
+    width: 100%;
+    height: 250px;
+    background-color: #e8846b;
+}
+
+#third {
+    width: 100%;
+    height: 250px;
+    background-color: #16528e;
+}
