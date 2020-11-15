@@ -50,12 +50,12 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     /* border: 1px solid red; */
-    height: 300px;
+    height: 380px;
     width: 400px;
     background-color: rgba(243, 243, 243, 0.3);
 }
 
-#username, #password {
+#username, #password, #confPassword {
     border: none;
     outline: none;
     background: none;
@@ -71,6 +71,7 @@ body {
 }
 
 #username {
+    top: 5%;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -78,6 +79,12 @@ body {
 #password {
     left: 50%;
     top: 25%;
+    transform: translateX(-50%);
+}
+
+#confPassword {
+    left: 50%;
+    top: 45%;
     transform: translateX(-50%);
 }
 
@@ -89,7 +96,7 @@ body {
     width: 30%;
     height: 40px;
     position: absolute;
-    top: 50%;
+    top: 75%;
     left: 50%;
     transform: translateX(-50%);
     font-family: mont-regular;
