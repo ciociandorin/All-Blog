@@ -87,7 +87,8 @@ $(document).ready(function() {
     $("#firstWrapper").mouseenter(function() {
 
         gsap.to("#firstWrapper", {
-            height: "300px"
+            height: "300px",
+            ease: "power4.out"
         });
 
         gsap.to("#secondShadow", {
@@ -103,7 +104,8 @@ $(document).ready(function() {
     $("#firstWrapper").mouseleave(function() {
         
         gsap.to("#firstWrapper", {
-            height: "250px"
+            height: "250px",
+            ease: "power4.out"
         });
 
         gsap.to("#secondShadow", {
@@ -119,7 +121,8 @@ $(document).ready(function() {
     $("#secondWrapper").mouseenter(function() {
 
         gsap.to("#secondWrapper", {
-            height: "300px"
+            height: "300px",
+            ease: "power4.out"
         });
 
         gsap.to("#firstShadow", {
@@ -135,7 +138,8 @@ $(document).ready(function() {
     $("#secondWrapper").mouseleave(function() {
         
         gsap.to("#secondWrapper", {
-            height: "250px"
+            height: "250px",
+            ease: "power4.out"
         });
 
         gsap.to("#firstShadow", {
@@ -151,7 +155,8 @@ $(document).ready(function() {
     $("#thirdWrapper").mouseenter(function() {
 
         gsap.to("#thirdWrapper", {
-            height: "300px"
+            height: "300px",
+            ease: "power4.out"
         });
 
         gsap.to("#firstShadow", {
@@ -167,7 +172,8 @@ $(document).ready(function() {
     $("#thirdWrapper").mouseleave(function() {
         
         gsap.to("#thirdWrapper", {
-            height: "250px"
+            height: "250px",
+            ease: "power4.out"
         });
 
         gsap.to("#firstShadow", {

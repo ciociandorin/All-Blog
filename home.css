@@ -35,15 +35,16 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 250px;
+    width: 280px;
     height: 20px;
+    font-family: mont-regular;
 }
 
 #recWrapper {
     /* border: 1px solid blue; */
     position: absolute;
     height: 100%;
-    width: 100px;
+    width: 125px;
     overflow: hidden;
     cursor: pointer;
 }
@@ -60,7 +61,7 @@ body {
     /* border: 1px solid blue; */
     position: absolute;
     height: 100%;
-    width: 75px;
+    width: 93px;
     overflow: hidden;
     cursor: pointer;
     right: 0%;
@@ -73,17 +74,6 @@ body {
 #sub2 {
     top: 17px;
 }
-
-/* #navBarCenter {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    border: 1px solid red;
-} */
 
 #navBarCenter li {
     display: inline-block;
