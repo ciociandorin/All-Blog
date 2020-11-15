@@ -1,0 +1,93 @@
+@font-face {
+    src: url(fonts/Mont-Bold.otf);
+    font-family: mont-bold;
+}
+
+@font-face {
+    src: url(fonts/Mont-Regular.otf);
+    font-family: mont-regular;
+}
+
+#firstWrapper {
+    width: 0%;
+    height: 250px;
+    position: relative;
+    cursor: pointer;
+}
+
+#first {
+    width: 100%;
+    height: 100%;
+    background-color: #72616e;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+}
+
+#firstShadow {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    opacity: 0;
+}
+
+.title {
+    font-family: mont-bold;
+    font-size: 50px;
+    color: #f3f3f3;
+}
+
+.description {
+    font-family: mont-regular;
+    font-size: 20px;
+    color: #f3f3f3;
+}
+
+#secondWrapper {
+    width: 0%;
+    height: 250px;
+    position: relative;
+    cursor: pointer;
+}
+
+#second {
+    width: 100%;
+    height: 100%;
+    background-color: #e8846b;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+}
+
+#secondShadow {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    opacity: 0;
+}
+
+#thirdWrapper {
+    width: 0%;
+    height: 250px;
+    position: relative;
+    cursor: pointer;
+}
+
+#third {
+    width: 100%;
+    height: 100%;
+    background-color: #16528e;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+}
+
+#thirdShadow {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    opacity: 0;
+}
