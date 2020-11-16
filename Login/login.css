@@ -21,27 +21,25 @@ body {
 }
 
 #first {
-    height: 100%;
-    width: 450px;
-    background-color: #72616e;
-    position: absolute;
+    float: left;
+    height: 0%;
+    width: 30%;
+    background-color: #167c80;
 }
 
 #second {
-    height: 100%;
-    width: 700px;
-    background-color: #e8846b;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    float: left;
+    height: 0%;
+    width: 40%;
+    background-color: #a2c5bf;
+    position: relative;
 }
 
 #third {
-    height: 100%;
-    width: 450px;
-    background-color: #16528e;
-    position: absolute;
-    right: 0%;
+    float: left;
+    height: 0%;
+    width: 30%;
+    background-color: #0082c8;
 }
 
 #loginWrapper {
@@ -49,18 +47,50 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* border: 1px solid red; */
-    height: 300px;
-    width: 400px;
-    background-color: rgba(243, 243, 243, 0.3);
+    height: 400px;
+    width: 420px;
+    background-color: #f3f3f3;
+    border-radius: 20px;
+    opacity: 0;
+}
+
+#loginText {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: mont-bold;
+    font-size: 25px;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+#register {
+    font-size: 17px;
+    font-family: mont-regular;
+    position: absolute;
+    text-decoration: none;
+    color: black;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+#fields {
+    height: 60%;
+    width: 100%;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #username, #password {
     border: none;
     outline: none;
-    background: none;
-    border-bottom: 3px solid black;
-    width: 200px;
+    background-color: #d3d3d3;
+    width: 75%;
     height: 50px;
     color: #f3f3f3;
     font-family: mont-regular;
@@ -68,6 +98,7 @@ body {
     color: black;
     position: absolute;
     text-align: center;
+    border-radius: 10px;
 }
 
 #username {
@@ -77,53 +108,49 @@ body {
 
 #password {
     left: 50%;
-    top: 25%;
-    transform: translateX(-50%);
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 ::placeholder {
-    color: black;
+    color: #a9a9a9;
 }
 
 #loginBtn {
-    width: 30%;
-    height: 40px;
+    width: 75%;
+    height: 50px;
+    border-radius: 10px;
     position: absolute;
-    top: 50%;
+    bottom: 0%;
     left: 50%;
     transform: translateX(-50%);
     font-family: mont-regular;
     font-size: 17px;
-    background-color: gray;
+    background-color: #438ef1;
     border: none;
     color: #f3f3f3;
     cursor: pointer;
 }
 
-#register {
+#frgtPassWrapper {
     font-size: 17px;
     font-family: mont-regular;
     position: absolute;
+    height: 21px;
+    width: 200px;
     text-decoration: none;
     color: black;
-    bottom: 0%;
-    right: 0%;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    overflow: hidden;
 }
 
-#frgtPass {
-    font-size: 17px;
-    font-family: mont-regular;
+#pass1, #pass2 {
     position: absolute;
-    text-decoration: none;
-    color: black;
-    bottom: 0%;
-    left: 0%;
 }
 
-#backHome {
-    text-decoration: none;
-    color: black;
-    position: absolute;
-    font-family: mont-regular;
-    top: 80%;
+#pass2 {
+    top: 18px;
 }

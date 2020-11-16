@@ -21,46 +21,82 @@ body {
 }
 
 #first {
-    height: 100%;
-    width: 450px;
-    background-color: #72616e;
-    position: absolute;
+    float: left;
+    position: relative;
+    top: 100%;
+    height: 0%;
+    width: 30%;
+    background-color: #065143;
 }
 
 #second {
-    height: 100%;
-    width: 700px;
-    background-color: #e8846b;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    float: left;
+    height: 0%;
+    width: 40%;
+    background-color: #129490;
+    position: relative;
+    z-index: 1;
 }
 
 #third {
-    height: 100%;
-    width: 450px;
-    background-color: #16528e;
-    position: absolute;
-    right: 0%;
+    float: left;
+    position: relative;
+    top: 100%;
+    height: 0%;
+    width: 30%;
+    background-color: #70B77E;
+    z-index: 0;
 }
 
-#loginWrapper {
+#registerWrapper {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* border: 1px solid red; */
-    height: 380px;
-    width: 400px;
-    background-color: rgba(243, 243, 243, 0.3);
+    height: 500px;
+    width: 420px;
+    background-color: #f3f3f3;
+    border-radius: 20px;
+    opacity: 0;
 }
 
-#username, #password, #confPassword {
+#registerText {
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: mont-bold;
+    font-size: 25px;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+#login {
+    font-size: 17px;
+    font-family: mont-regular;
+    position: absolute;
+    text-decoration: none;
+    color: black;
+    top: 9%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+#fields {
+    height: 70%;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#username, #email, #password, #cnfrmPass {
     border: none;
     outline: none;
-    background: none;
-    border-bottom: 3px solid black;
-    width: 200px;
+    background-color: #d3d3d3;
+    width: 75%;
     height: 50px;
     color: #f3f3f3;
     font-family: mont-regular;
@@ -68,69 +104,48 @@ body {
     color: black;
     position: absolute;
     text-align: center;
+    border-radius: 10px;
 }
 
 #username {
-    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#email {
+    top: 21.5%;
     left: 50%;
     transform: translateX(-50%);
 }
 
 #password {
     left: 50%;
-    top: 25%;
+    top: 43%;
     transform: translateX(-50%);
 }
 
-#confPassword {
+#cnfrmPass {
     left: 50%;
-    top: 45%;
+    top: 64.5%;
     transform: translateX(-50%);
 }
 
 ::placeholder {
-    color: black;
+    color: #a9a9a9;
 }
 
 #loginBtn {
-    width: 30%;
-    height: 40px;
+    width: 75%;
+    height: 50px;
+    border-radius: 10px;
     position: absolute;
-    top: 75%;
+    bottom: 0%;
     left: 50%;
     transform: translateX(-50%);
     font-family: mont-regular;
     font-size: 17px;
-    background-color: gray;
+    background-color: #438ef1;
     border: none;
     color: #f3f3f3;
     cursor: pointer;
-}
-
-#register {
-    font-size: 17px;
-    font-family: mont-regular;
-    position: absolute;
-    text-decoration: none;
-    color: black;
-    bottom: 0%;
-    right: 0%;
-}
-
-#frgtPass {
-    font-size: 17px;
-    font-family: mont-regular;
-    position: absolute;
-    text-decoration: none;
-    color: black;
-    bottom: 0%;
-    left: 0%;
-}
-
-#backHome {
-    text-decoration: none;
-    color: black;
-    position: absolute;
-    font-family: mont-regular;
-    top: 80%;
 }
