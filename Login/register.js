@@ -8,8 +8,7 @@ gsap.to("#first", {
 gsap.to("#second", {
     height: "100%",
     ease: "power4.inOut",
-    duration: 1,
-    delay: 0.1
+    duration: 1
 });
 
 gsap.to("#third", {
