@@ -8,6 +8,7 @@ import { HomePostListComponent } from './home-post-list/home-post-list.component
 import { LoginAndRegisterBackgroundComponent } from './login-and-register-background/login-and-register-background.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
+import { FadeInAnimationDirective } from './directives/gsap/fade-in-animation.directive';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { RegisterFormComponent } from './register-form/register-form.component';
     HomePostListComponent,
     LoginAndRegisterBackgroundComponent,
     LoginFormComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    FadeInAnimationDirective
   ],
   imports: [
     BrowserModule,
