@@ -1,9 +1,7 @@
-import {Component, ElementRef, EventEmitter, Input, Output} from '@angular/core';
+import {Component, Directive, ElementRef, EventEmitter, Injectable, Input, Output} from '@angular/core';
 import {TimelineMax} from 'gsap';
-@Component({
-  template: ''
-})
-export class CoreAnimationDirective {
+@Directive()
+export abstract class CoreAnimationDirective {
   @Input() duration = 1;
   @Input() delay = 0;
 
@@ -13,11 +11,11 @@ export class CoreAnimationDirective {
 
   constructor(protected element: ElementRef) {
     this.timeline = new TimelineMax({
-        onComplete: (_: any) => this.complete.emit(),
-        onReverseComplete: (_: any) => this.reverseComplete.emit(),
-        paused:true,
-        reversed:true
-      });
+      onComplete: (_: any) => this.complete.emit(),
+      onReverseComplete: (_: any) => this.reverseComplete.emit(),
+      paused:true,
+      reversed:true
+    });
   }
   protected animateIn() {
     if(this.timeline.isActive()) {

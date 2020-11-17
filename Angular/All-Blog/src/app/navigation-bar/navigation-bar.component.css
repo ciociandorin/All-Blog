@@ -1,11 +1,16 @@
 @font-face {
-    src: url(fonts/Mont-Bold.otf);
+    src: url(src/app/fonts/Mont-Bold.otf);
     font-family: mont-bold;
 }
 
 @font-face {
-    src: url(fonts/Mont-Regular.otf);
+    src: url(src/app/fonts/Mont-Regular.otf);
     font-family: mont-regular;
+}
+
+body { 
+    margin: 0;
+    padding: 0;
 }
 
 #navBar {
@@ -15,13 +20,22 @@
     position: relative;
 }
 
-#siteName {
+#siteNameWrapper {
     position: absolute;
     top: 50%;
     left: 2%;
     transform: translateY(-50%);
+    overflow: hidden;
+    width: 77px;
+    height: 26px;
+    white-space: nowrap;
+}
+
+#siteName {
     font-size: 20px;
     font-family: mont-bold;
+    /* position: absolute;
+    left: -77px; */
 }
 
 #navBarCenterWrapper {

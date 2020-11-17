@@ -3,9 +3,9 @@ import { TimelineMax } from 'gsap';
 import { CoreAnimationDirective } from './core-animation.directive';
 
 @Directive({
-  selector: '[fadeInAnimation]'
+  selector: '[rightToLeftAnimation]'
 })
-export class FadeInAnimationDirective extends CoreAnimationDirective implements OnInit {
+export class RightToLeftAnimationDirective extends CoreAnimationDirective implements OnInit {
   constructor(protected element: ElementRef) {
     super(element);
   }
@@ -16,7 +16,8 @@ export class FadeInAnimationDirective extends CoreAnimationDirective implements 
   }
 
   protected animateIn() {
-    this.timeline.from(this.element.nativeElement, this.duration, {opacity:'0', ease:"power4.inOut"}, this.delay);
+    this.timeline.from(this.element.nativeElement, this.duration, {width: "0%", ease:"power4.inOut"}, this.delay);
     super.animateIn();
   }
+  
 }

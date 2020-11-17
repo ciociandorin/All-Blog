@@ -3,22 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeNavBarComponent } from './home-nav-bar/home-nav-bar.component';
-import { HomePostListComponent } from './home-post-list/home-post-list.component';
-import { LoginAndRegisterBackgroundComponent } from './login-and-register-background/login-and-register-background.component';
-import { LoginFormComponent } from './login-form/login-form.component';
-import { RegisterFormComponent } from './register-form/register-form.component';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { PostListComponent } from './post-list/post-list.component';
 import { FadeInAnimationDirective } from './directives/gsap/fade-in-animation.directive';
+import { RightToLeftAnimationDirective } from './directives/gsap/right-to-left-animation.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeNavBarComponent,
-    HomePostListComponent,
-    LoginAndRegisterBackgroundComponent,
-    LoginFormComponent,
-    RegisterFormComponent,
-    FadeInAnimationDirective
+    NavigationBarComponent,
+    PostListComponent,
+    FadeInAnimationDirective,
+    RightToLeftAnimationDirective
   ],
   imports: [
     BrowserModule,
