@@ -1,0 +1,201 @@
+@font-face {
+    src: url(fonts/Mont-Bold.otf);
+    font-family: mont-bold;
+}
+
+@font-face {
+    src: url(fonts/Mont-Regular.otf);
+    font-family: mont-regular;
+}
+
+body { 
+    margin: 0;
+    padding: 0;
+}
+
+#navBar {
+    width: 100%;
+    height: 63px;
+    background-color: #f3f3f3;
+    position: relative;
+}
+
+#siteNameWrapper {
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    transform: translateY(-50%);
+    overflow: hidden;
+    width: 77px;
+    height: 26px;
+    white-space: nowrap;
+}
+
+#siteName {
+    font-size: 20px;
+    font-family: mont-bold;
+    /* position: absolute;
+    left: -77px; */
+}
+
+#navBarCenterWrapper {
+    /* border: 1px solid red; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    height: 20px;
+    font-family: mont-regular;
+}
+
+#navBarCenterWrapper a {
+    color: black;
+}
+
+#recWrapper {
+    /* border: 1px solid blue; */
+    position: absolute;
+    height: 100%;
+    width: 125px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#rec1, #rec2 {
+    position: absolute;
+}
+
+#rec2 {
+    top: 17px;
+}
+
+#subWrapper {
+    /* border: 1px solid blue; */
+    position: absolute;
+    height: 100%;
+    width: 93px;
+    overflow: hidden;
+    cursor: pointer;
+    right: 0%;
+}
+
+#sub1, #sub2 {
+    position: absolute;
+}
+
+#sub2 {
+    top: 17px;
+}
+
+#navBarCenter li {
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 50px;
+    font-family: mont-regular;
+}
+
+#navBarMenu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: absolute;
+    right: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#navBarMenu li {
+    display: inline-block;
+    margin-left: 50px;
+    font-family: mont-regular;
+}
+
+#navBarMenu a {
+    text-decoration: none;
+    color: black;
+}
+
+#firstWrapper {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    cursor: pointer;
+}
+
+#first {
+    width: 100%;
+    height: 100%;
+    background-color: #262322;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+}
+
+#firstShadow {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    opacity: 0;
+}
+
+.title {
+    font-family: mont-bold;
+    font-size: 50px;
+    color: #f3f3f3;
+}
+
+.description {
+    font-family: mont-regular;
+    font-size: 20px;
+    color: #f3f3f3;
+}
+
+#secondWrapper {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    cursor: pointer;
+}
+
+#second {
+    width: 100%;
+    height: 100%;
+    background-color: #63372C;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+}
+
+#secondShadow {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    opacity: 0;
+}
+
+#thirdWrapper {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    cursor: pointer;
+}
+
+#third {
+    width: 100%;
+    height: 100%;
+    background-color: #C97D60;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+}
+
+#thirdShadow {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    opacity: 0;
+}
