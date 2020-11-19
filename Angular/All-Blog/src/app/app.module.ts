@@ -13,6 +13,7 @@ import { RegisterFormComponent } from './register-form/register-form.component';
 import { AddPostComponent } from './add-post/add-post.component';
 import { PostComponent } from './post/post.component';
 import { TopToBottomDirective2 } from './directives/gsap/top-to-bottom-animation2.directive';
+import { NewPostComponent } from './new-post/new-post.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { TopToBottomDirective2 } from './directives/gsap/top-to-bottom-animation
     AddPostComponent,
     PostComponent,
     TopToBottomDirective,
-    TopToBottomDirective2
+    TopToBottomDirective2,
+    NewPostComponent
   ],
   imports: [
     BrowserModule,
