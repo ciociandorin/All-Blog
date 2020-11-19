@@ -15,7 +15,6 @@ import { AppComponent } from './app.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { LoginFormComponent } from './login-form/login-form.component';
-import { RegisterFormComponent } from './register-form/register-form.component';
 import { AddPostComponent } from './add-post/add-post.component';
 import { PostComponent } from './post/post.component';
 import { NewPostComponent } from './new-post/new-post.component';
@@ -32,7 +31,6 @@ import { appRoutes } from './routes';
     FadeInAnimationDirective,
     RightToLeftAnimationDirective,
     LoginFormComponent,
-    RegisterFormComponent,
     AddPostComponent,
     PostComponent,
     TopToBottomDirective,
