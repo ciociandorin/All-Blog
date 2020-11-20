@@ -23,6 +23,9 @@ export const appRoutes: Routes = [
     },
     {
         path: 'home', component: HomeComponent 
+    },
+    {
+        path: 'userprofile', component: UserProfileComponent
     }
     
 ];
