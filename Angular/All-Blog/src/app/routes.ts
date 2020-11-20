@@ -2,6 +2,8 @@
 import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { UserComponent } from './user/user.component';
 import { Routes } from '@angular/router';
+import { SignInComponent } from './user/sign-in/sign-in.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 export const appRoutes: Routes = [
     {
@@ -9,6 +11,14 @@ export const appRoutes: Routes = [
         children: [{ path: '', component: SignUpComponent }]
     },
     {
-        path: '', redirectTo : 'signup', pathMatch: 'full'
-    }
+        path: 'login', component: UserComponent,
+        children: [{ path: '', component: SignInComponent }]
+    },
+    {
+        path: 'userprofile', component: UserProfileComponent //,canActivate:[AuthGuard]
+    },
+    {
+        path: '', redirectTo : '/login', pathMatch: 'full'
+    },
+    
 ];

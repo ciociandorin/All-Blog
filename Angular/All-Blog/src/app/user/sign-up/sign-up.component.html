@@ -29,7 +29,7 @@
 
                     <div id = "registerText">Create account</div>
 
-                    <div id = "login">Already have an account? <a href = "login.html">Sign in!</a></div>
+                    <div id = "login">Already have an account? <a routerLink="/login">Sign in!</a></div>
 
                     <div id = "fields">
                         <form #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)">

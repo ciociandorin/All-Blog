@@ -1,3 +1,4 @@
+import { UserService } from './shared/user.service';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 // directives
@@ -21,7 +22,10 @@ import { NewPostComponent } from './new-post/new-post.component';
 import { UserComponent } from './user/user.component';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
 // routes
-import { appRoutes } from './routes'; 
+import { appRoutes } from './routes';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { SignInComponent } from './user/sign-in/sign-in.component';
+import { HomeComponent } from './user/home/home.component'; 
 
 @NgModule({
   declarations: [
@@ -37,7 +41,9 @@ import { appRoutes } from './routes';
     TopToBottomDirective2,
     NewPostComponent,
     UserComponent,
-    SignUpComponent
+    SignUpComponent,
+    UserProfileComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +52,7 @@ import { appRoutes } from './routes';
     RouterModule.forRoot(appRoutes),
     HttpClientModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
