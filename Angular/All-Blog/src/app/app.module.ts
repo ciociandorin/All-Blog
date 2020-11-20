@@ -15,8 +15,6 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { AddPostComponent } from './add-post/add-post.component';
-import { PostComponent } from './post/post.component';
-import { NewPostComponent } from './new-post/new-post.component';
 import { UserComponent } from './user/user.component';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -32,10 +30,8 @@ import { HomeComponent } from './home/home.component';
     FadeInAnimationDirective,
     RightToLeftAnimationDirective,
     AddPostComponent,
-    PostComponent,
     TopToBottomDirective,
     TopToBottomDirective2,
-    NewPostComponent,
     UserComponent,
     SignUpComponent,
     UserProfileComponent,
