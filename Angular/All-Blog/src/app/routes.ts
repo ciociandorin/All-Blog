@@ -4,6 +4,7 @@ import { UserComponent } from './user/user.component';
 import { Routes } from '@angular/router';
 import { SignInComponent } from './user/sign-in/sign-in.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { HomeComponent } from './home/home.component';
 
 export const appRoutes: Routes = [
     {
@@ -20,5 +21,8 @@ export const appRoutes: Routes = [
     {
         path: '', redirectTo : '/login', pathMatch: 'full'
     },
+    {
+        path: 'home', component: HomeComponent 
+    }
     
 ];

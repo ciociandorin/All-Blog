@@ -13,28 +13,24 @@ import { TopToBottomDirective2 } from './directives/gsap/top-to-bottom-animation
 import { FormsModule } from '@angular/forms';
 // components
 import { AppComponent } from './app.component';
-import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { PostListComponent } from './post-list/post-list.component';
-import { LoginFormComponent } from './login-form/login-form.component';
 import { AddPostComponent } from './add-post/add-post.component';
 import { PostComponent } from './post/post.component';
 import { NewPostComponent } from './new-post/new-post.component';
 import { UserComponent } from './user/user.component';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
-// routes
-import { appRoutes } from './routes';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
-import { HomeComponent } from './user/home/home.component'; 
+// routes
+import { appRoutes } from './routes'; 
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationBarComponent,
     PostListComponent,
     FadeInAnimationDirective,
     RightToLeftAnimationDirective,
-    LoginFormComponent,
     AddPostComponent,
     PostComponent,
     TopToBottomDirective,
@@ -43,7 +39,8 @@ import { HomeComponent } from './user/home/home.component';
     UserComponent,
     SignUpComponent,
     UserProfileComponent,
-    SignInComponent
+    SignInComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
