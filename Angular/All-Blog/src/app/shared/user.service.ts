@@ -15,14 +15,21 @@ export class UserService {
     // sublist: ''
   };
 
+  noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
+  // add " this.noAuthHeader " for methods who don't need auth
+
   constructor( private http: HttpClient ) { }
 
   postUser(user: User){
-    return this.http.post(environment.apiBaseUrl+'/register',user);
+    return this.http.post(environment.apiBaseUrl+'/register',user, this.noAuthHeader);
   }
 
   login(authCredentials: any) {
-    return this.http.post<{token:string}>(environment.apiBaseUrl + '/authenticate', authCredentials);
+    return this.http.post<{token:string}>(environment.apiBaseUrl + '/authenticate', authCredentials, this.noAuthHeader);
+  }
+
+  getUserProfile() {
+    return this.http.get<{user:string}>(environment.apiBaseUrl + '/userProfile');
   }
 
 
@@ -49,7 +56,7 @@ export class UserService {
     else
       return null;
   }
-  
+
   isLoggedIn() {
     var userPayload = this.getUserPayload();
     if (userPayload)

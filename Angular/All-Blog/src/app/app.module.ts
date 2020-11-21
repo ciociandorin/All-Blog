@@ -25,6 +25,8 @@ import { HomeComponent } from './home/home.component';
 import { appRoutes } from './routes'; 
 
 import { AuthGuard } from './auth/auth.guard';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './auth/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,13 @@ import { AuthGuard } from './auth/auth.guard';
     RouterModule.forRoot(appRoutes),
     HttpClientModule
   ],
-  providers: [AuthGuard, UserService],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+    , AuthGuard, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
