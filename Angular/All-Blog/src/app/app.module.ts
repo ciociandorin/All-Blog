@@ -1,6 +1,7 @@
 import { UserService } from './shared/user.service';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+
 // directives
 import { TopToBottomDirective } from './directives/gsap/top-to-bottom-animation.directive';
 import { BrowserModule } from '@angular/platform-browser';
@@ -19,9 +20,11 @@ import { UserComponent } from './user/user.component';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
+import { HomeComponent } from './home/home.component';
 // routes
 import { appRoutes } from './routes'; 
-import { HomeComponent } from './home/home.component';
+
+import { AuthGuard } from './auth/auth.guard';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,7 @@ import { HomeComponent } from './home/home.component';
     RouterModule.forRoot(appRoutes),
     HttpClientModule
   ],
-  providers: [UserService],
+  providers: [AuthGuard, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
