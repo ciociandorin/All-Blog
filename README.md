@@ -19,7 +19,6 @@
 ### Installation:
 ``` 
 git clone https://github.com/ciociandorin/All-Blog
-cd cd Angular/All-Blog
 ng serve -o
 node app.js
 nodemon app.js
