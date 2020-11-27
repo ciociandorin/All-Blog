@@ -10,5 +10,7 @@ mongoose.connect(
             console.log('Error in MongoDB connection : ' + JSON.stringify(err, undefined, 2));
         }
     });
+
 mongoose.set('useCreateIndex', true);
+module.exports = mongoose;
 require('./user.model');

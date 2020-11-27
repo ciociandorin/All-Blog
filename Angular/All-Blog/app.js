@@ -8,6 +8,7 @@ const cors = require('cors');
 const passport = require('passport');
 
 const rtsIndex = require('./routes/index.router');
+var postController = require('./controllers/post.controller'); 
 
 var app = express();
 
@@ -28,3 +29,5 @@ app.use((err, req, res, next) => {
 
 //startserver
 app.listen(process.env.PORT, () => console.log( `Server started at port : ${process.env.PORT} ` ));
+
+app.use('/post', postController);
