@@ -5,6 +5,7 @@ import { SignInComponent } from './user/sign-in/sign-in.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './auth/auth.guard';
+import { PostComponent } from './post/post.component';
 
 // add " canActivate:[AuthGuard] " to protected components
 
@@ -24,7 +25,10 @@ export const appRoutes: Routes = [
         path: '', redirectTo : '/home', pathMatch: 'full'
     },
     {
-        path: 'home', component: HomeComponent, // canActivate:[AuthGuard]
+        path: 'home', component: HomeComponent,
+    },
+    {
+        path: 'post', component: PostComponent, canActivate:[AuthGuard]
     }
     
 ];

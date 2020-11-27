@@ -1,3 +1,4 @@
+import { PostService } from './shared/post.service';
 import { UserService } from './shared/user.service';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -27,6 +28,7 @@ import { appRoutes } from './routes';
 import { AuthGuard } from './auth/auth.guard';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth/auth.interceptor';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     SignUpComponent,
     UserProfileComponent,
     SignInComponent,
-    HomeComponent
+    HomeComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +59,7 @@ import { AuthInterceptor } from './auth/auth.interceptor';
       useClass: AuthInterceptor,
       multi: true
     }
-    , AuthGuard, UserService],
+    , AuthGuard, UserService, PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

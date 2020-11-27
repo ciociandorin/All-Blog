@@ -14,9 +14,10 @@ var app = express();
 
 // middleware
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({ origin: 'http://localhost:4200' }));
 app.use(passport.initialize());
-app.use('/api', rtsIndex);
+app.use('/api', rtsIndex); 
+app.use('/post', postController);
 
 //error handler
 app.use((err, req, res, next) => {
@@ -29,5 +30,3 @@ app.use((err, req, res, next) => {
 
 //startserver
 app.listen(process.env.PORT, () => console.log( `Server started at port : ${process.env.PORT} ` ));
-
-app.use('/post', postController);
