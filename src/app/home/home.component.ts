@@ -22,5 +22,5 @@ export class HomeComponent implements OnInit {
       this.postService.post = res as Post[];
     });
   }
-
+  
 }
