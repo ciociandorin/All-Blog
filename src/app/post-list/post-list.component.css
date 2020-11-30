@@ -1,0 +1,83 @@
+#firstWrapper {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    cursor: pointer;
+}
+
+#first {
+    width: 100%;
+    height: 100%;
+    background-color: #262322;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+}
+
+#firstShadow {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    opacity: 0;
+}
+
+.title {
+    font-family: mont-bold;
+    font-size: 50px;
+    color: #f3f3f3;
+}
+
+.description {
+    font-family: mont-regular;
+    font-size: 20px;
+    color: #f3f3f3;
+}
+
+#secondWrapper {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    cursor: pointer;
+}
+
+#second {
+    width: 100%;
+    height: 100%;
+    background-color: #63372C;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+}
+
+#secondShadow {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    opacity: 0;
+}
+
+#thirdWrapper {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    cursor: pointer;
+}
+
+#third {
+    width: 100%;
+    height: 100%;
+    background-color: #C97D60;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+}
+
+#thirdShadow {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    opacity: 0;
+}
