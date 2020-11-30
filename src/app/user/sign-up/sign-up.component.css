@@ -1,10 +1,10 @@
 @font-face {
-    src: url(src/app/fonts/Mont-Bold.otf);
+    src: url(../../../assets/Mont-Bold.otf);
     font-family: mont-bold;
 }
 
 @font-face {
-    src: url(src/app/fonts/Mont-Regular.otf);
+    src: url(../../../assets/Mont-Regular.otf);
     font-family: mont-regular;
 }
 
@@ -23,15 +23,15 @@ body {
 #first {
     float: left;
     position: relative;
-    top: 0%;
-    height: 100%;
+    top: 100%;
+    height: 0%;
     width: 30%;
     background-color: #065143;
 }
 
 #second {
     float: left;
-    height: 100%;
+    height: 0%;
     width: 40%;
     background-color: #129490;
     position: relative;
@@ -41,8 +41,8 @@ body {
 #third {
     float: left;
     position: relative;
-    top: 0%;
-    height: 100%;
+    top: 100%;
+    height: 0%;
     width: 30%;
     background-color: #70B77E;
     z-index: 0;
@@ -57,7 +57,7 @@ body {
     width: 420px;
     background-color: #f3f3f3;
     border-radius: 20px;
-    opacity: 1;
+    opacity: 0;
 }
 
 #registerText {
@@ -76,7 +76,6 @@ body {
     font-family: mont-regular;
     position: absolute;
     text-decoration: none;
-    color: black;
     top: 9%;
     left: 50%;
     transform: translateX(-50%);
@@ -107,9 +106,29 @@ body {
     border-radius: 10px;
 }
 
+.validation-message {
+    font-size: 20px;
+    font-family: mont-regular;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 #username {
     left: 50%;
     transform: translateX(-50%);
+}
+
+#userVal {
+    height: 50px;
+    width: 280px;
+    position: absolute;
+    left: 93%;
+    white-space: nowrap;
+    background-color: #FF5154;
+    border-radius: 10px;
 }
 
 #email {
@@ -118,10 +137,32 @@ body {
     transform: translateX(-50%);
 }
 
+#emailVal {
+    height: 50px;
+    width: 280px;
+    position: absolute;
+    top: 21.5%;
+    left: 93%;
+    white-space: nowrap;
+    background-color: #FF5154;
+    border-radius: 10px;
+}
+
 #password {
     left: 50%;
     top: 43%;
     transform: translateX(-50%);
+}
+
+#passVal {
+    height: 50px;
+    width: 280px;
+    position: absolute;
+    top: 43%;
+    left: 93%;
+    white-space: nowrap;
+    background-color: #FF5154;
+    border-radius: 10px;
 }
 
 #cnfrmPass {
@@ -134,7 +175,7 @@ body {
     color: #a9a9a9;
 }
 
-#loginBtn {
+#signupBtn {
     width: 75%;
     height: 50px;
     border-radius: 10px;
@@ -144,7 +185,7 @@ body {
     transform: translateX(-50%);
     font-family: mont-regular;
     font-size: 17px;
-    background-color: #438ef1;
+    background-color: #7AA095;
     border: none;
     color: #f3f3f3;
     cursor: pointer;

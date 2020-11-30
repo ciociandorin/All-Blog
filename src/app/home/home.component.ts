@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Post } from './../shared/post.model';
 import { PostService } from './../shared/post.service';
 import { NgForm } from '@angular/forms';
+import { gsap } from 'gsap';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,86 @@ export class HomeComponent implements OnInit {
   constructor(public postService: PostService) { }
 
   ngOnInit(): void {
+
+    gsap.to("#siteName", {
+      left: 0,
+      ease: "power4.inOut",
+      duration: 1
+    });
+    
+    gsap.from(".navBarEl", {
+        opacity: 0,
+        ease: "power4.inOut",
+        duration: 0.7,
+        delay: 0.5,
+        stagger: 0.2
+    });
+
     this.refreshPostList();
+  }
+
+  fOn1():void {
+    
+    gsap.to("#rec1", {
+      top: "-17px",
+      ease: "power4.inOut",
+      duration: 0.28
+    });
+
+    gsap.to("#rec2", {
+        top: "0px",
+        ease: "power4.inOut",
+        duration: 0.28
+    });
+
+  }
+
+  fOff1():void {
+
+    gsap.to("#rec1", {
+      top: "0px",
+      ease: "power4.inOut",
+      duration: 0.28
+    });
+
+    gsap.to("#rec2", {
+        top: "17px",
+        ease: "power4.inOut",
+        duration: 0.28
+    });
+
+  }
+
+  fOn2():void {
+    
+    gsap.to("#sub1", {
+      top: "-17px",
+      ease: "power4.inOut",
+      duration: 0.28
+    });
+
+    gsap.to("#sub2", {
+        top: "0px",
+        ease: "power4.inOut",
+        duration: 0.28
+    });
+
+  }
+
+  fOff2():void {
+
+    gsap.to("#sub1", {
+      top: "0px",
+      ease: "power4.inOut",
+      duration: 0.28
+    });
+
+    gsap.to("#sub2", {
+        top: "17px",
+        ease: "power4.inOut",
+        duration: 0.28
+    });
+
   }
 
   refreshPostList() {

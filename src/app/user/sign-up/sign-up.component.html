@@ -1,33 +1,101 @@
 
+<div id = "container">
+
+    <div id = "first"></div>
+
+    <div id = "second">
+
+        <div id = "registerWrapper">
+
+            <div id = "registerText">Create account</div>
+
+            <div id = "login">Already have an account? <a routerLink="/login">Sign in!</a></div>
+
+            <div id = "fields">
+                <form #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)">
+
+                    <input id = "username" type = "text" name = "username" placeholder = "Username" #username = "ngModel" [(ngModel)] = "userService.selectedUser.username"
+                    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !username.valid }">
+
+                    <div id = "userVal" *ngIf="signUpForm.submitted && !username.valid">
+
+                        <label class="validation-message">This field is required.</label>
+
+                    </div>
+
+                    <input id = "email" type = "email" name = "email" placeholder = "E-mail" #email = "ngModel" [(ngModel)] = "userService.selectedUser.email"
+                    required [pattern]="emailRegex"  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !email.valid }">
+
+                    <div id = "emailVal" *ngIf="signUpForm.submitted && email.errors">
+
+                        <label *ngIf="email.errors.required" class="validation-message">This field is required.</label>
+                        <label *ngIf="email.errors.pattern" class="validation-message">Invalid email address.</label>
+
+                    </div>
+
+                    <input id = "password" type = "password" name = "password" placeholder = "Password" #password = "ngModel" [(ngModel)] = "userService.selectedUser.password"
+                    minlength="4" required [ngClass]="{'invalid-textbox' :signUpForm.submitted && !password.valid }">
+
+                    <div id = "passVal" *ngIf="signUpForm.submitted && password.errors">
+
+                        <label *ngIf="password.errors.required" class="validation-message">This field is required.</label>
+                        <label *ngIf="password.errors.minlength" class="validation-message">Enter at least 4 characters.</label>
+
+                    </div>
+
+                    <button id = "signupBtn" type = "submit" (mouseenter) = "btnOn()" (mouseleave) = "btnOff()">Sign Up</button>
+
+                </form>
+
+                <!-- Success message -->
+                <div class="success" *ngIf="showSucessMessage">
+                    Saved successfully
+                </div>
+
+                <!-- Error message -->
+                <div class="alert" *ngIf="serverErrorMessages">
+                    {{serverErrorMessages}}
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id = "third"></div>
+
+</div>
+<!-- 
     <body>
 
-        <div id = "container">
+        <div id = "container"> -->
 
-            <div id = "first"
+            <!-- <div id = "first"
 
             topToBottomAnimation2
             [duration]="1"
             [delay]="1"
             
-            ></div>
+            ></div> -->
 
-            <div id = "second"
+            <!-- <div id = "second"
 
             topToBottomAnimation
             [duration]="1"
             [delay]="1"
             
-            >
+            > -->
 
-                <div id = "registerWrapper"
+                <!-- <div id = "registerWrapper"
 
                 fadeInAnimation
                 [duration]="1"
                 [delay]="2"
 
-                >
+                > -->
 
-                    <div id = "registerText">Create account</div>
+                    <!-- <div id = "registerText">Create account</div>
 
                     <div id = "login">Already have an account? <a routerLink="/login">Sign in!</a></div>
 
@@ -55,15 +123,15 @@
 
                         
 
-                        </form>
+                        </form> -->
 
                         <!-- Success message -->
-                        <div class="success" *ngIf="showSucessMessage">
+                        <!-- <div class="success" *ngIf="showSucessMessage">
                             Saved successfully
-                        </div>
+                        </div> -->
   
                         <!-- Error message -->
-                        <div class="alert" *ngIf="serverErrorMessages">
+                        <!-- <div class="alert" *ngIf="serverErrorMessages">
                             {{serverErrorMessages}}
                         </div>
 
@@ -71,19 +139,19 @@
 
                 </div>
 
-            </div>
+            </div> -->
 
-            <div id = "third"
+            <!-- <div id = "third"
             
             topToBottomAnimation2
             [duration]="1"
             [delay]="1"
             
-            ></div>
-
+            ></div> -->
+<!-- 
         </div>
 
 
-    </body>
+    </body> -->
 
 

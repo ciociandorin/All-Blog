@@ -1,4 +1,51 @@
-<table *ngIf="userDetails" class="table-fill">
+<div>
+
+    <div id = "userDetails">    
+
+        <!-- <div id = "test">test</div> -->
+
+        <div id = "first"></div>
+        <div id = "second"></div>
+
+        <div id = "bar">
+
+            <div id = "siteNameWrapper">
+                <div id = "siteName"><a routerLink = "/home">All Blog</a></div>
+            </div>
+
+        </div>
+
+        <div id = "content">
+
+            <div id = "titleWrapper">
+                <div id = "title">Your profile</div>
+            </div>
+
+            <div id = "usernameWrapper">
+                <div id = "username">Username</div>
+            </div>
+            
+            <div id = "userDetail">{{userDetails.username}}</div>
+
+            <div id = "emailWrapper">
+                <div id = "email">E-mail</div>
+            </div>
+
+            <div id = "emailDetail">{{userDetails.email}}</div>
+
+        </div>
+        
+        <div id = "logoutWrapper" (mouseenter) = "btnOn()" (mouseleave) = "btnOff()" (click) = "onLogout()">
+            <div id = "logout1">Logout</div>
+            <div id = "logout2">Logout</div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- <table *ngIf="userDetails" class="table-fill">
+
     <thead>
         <tr>
             <th colspan="2" class="text-center">User Profile</th>
@@ -19,4 +66,4 @@
             </td>
         </tr>
     </tbody>
-  </table>
+  </table> -->
