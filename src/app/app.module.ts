@@ -15,8 +15,6 @@ import { TopToBottomDirective2 } from './directives/gsap/top-to-bottom-animation
 import { FormsModule } from '@angular/forms';
 // components
 import { AppComponent } from './app.component';
-import { PostListComponent } from './post-list/post-list.component';
-import { AddPostComponent } from './add-post/add-post.component';
 import { UserComponent } from './user/user.component';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -33,10 +31,8 @@ import { PostComponent } from './post/post.component';
 @NgModule({
   declarations: [
     AppComponent,
-    PostListComponent,
     FadeInAnimationDirective,
     RightToLeftAnimationDirective,
-    AddPostComponent,
     TopToBottomDirective,
     TopToBottomDirective2,
     UserComponent,
