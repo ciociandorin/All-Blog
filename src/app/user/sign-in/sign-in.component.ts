@@ -19,7 +19,9 @@ export class SignInComponent implements OnInit {
     password:''
   };
   emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  serverErrorMessages: string | undefined;
+  serverErrorMessagesId: string | undefined;
+  serverErrorMessagesPassword: string | undefined;
+
 
   ngOnInit(): void {
 
@@ -113,7 +115,11 @@ export class SignInComponent implements OnInit {
         this.router.navigateByUrl('/home');
       },
       err => {
-        this.serverErrorMessages = err.error.message;
+        if(err.error.message = 'Wrong password')
+          this.serverErrorMessagesPassword = err.error.message;
+        else
+          this.serverErrorMessagesId = err.error.message;
+
       }
     );
   }

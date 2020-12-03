@@ -41,8 +41,12 @@
 
           </div>
 
-          <div class="alert" *ngIf="serverErrorMessages">
-            {{serverErrorMessages}}
+          <div class="alert" *ngIf="serverErrorMessagesPassword">
+            {{serverErrorMessagesPassword}}
+          </div>
+
+          <div class="alert" *ngIf="serverErrorMessagesId">
+            {{serverErrorMessagesId}}
           </div>
 
           <a href = "#"><div id = "frgtPassWrapper" (mouseenter) = "funct1()" (mouseleave) = "funct2()">
