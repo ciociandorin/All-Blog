@@ -3,7 +3,8 @@
   <div id = "left">
 
     <form #postForm="ngForm" (ngSubmit)="onSubmit(postForm)">
-
+      
+      <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="model._id">
       <input type="text" name="title" #name="ngModel" [(ngModel)]="model.title" placeholder="Enter post title" required>
       <input type="text" name="description" #name="ngModel" [(ngModel)]="model.description" placeholder="Description">
       <button type="button" (click)="resetForm(postForm)">Reset</button>
