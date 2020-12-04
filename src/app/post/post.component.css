@@ -1,0 +1,24 @@
+#container {
+    height: 100vh;
+    width: 100%;
+}
+
+#left {
+    height: 100%;
+    width: 50%;
+    /* border: 1px solid red; */
+    float: left;
+    background-color: #1B263B;
+}
+
+#right {
+    height: 100%;
+    width: 50%;
+    background-color: #415A77;
+    position: relative;
+    float: left;
+}
+
+table {
+    color: #f3f3f3
+}

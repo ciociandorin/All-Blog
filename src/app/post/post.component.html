@@ -1,59 +1,42 @@
-<div class="row">
-    <div class="col s12">
-      <div class="card">
-        <div class="card-content white-text">
-          <div class="row">
-            <div class="col s5">
-              <form #postForm="ngForm" (ngSubmit)="onSubmit(postForm)">
-                <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="model._id">
-                <div class="row">
-                  <div class="input-field col s12">
-                    <input type="text" name="title" #name="ngModel" [(ngModel)]="model.title" placeholder="Enter post title" required>
-                    <label>Title :
-                      <label class="red-text">*</label>
-                    </label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="input-field col s12">
-                    <input type="text" name="description" #name="ngModel" [(ngModel)]="model.description" placeholder="Description">
-                    <label>Description :</label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="input-field col s12">
-                    <button class="btn btn-custom right" type="button" (click)="resetForm(postForm)">Reset</button>
-                    <button class="btn btn-custom right" type="submit" [disabled]="!postForm.valid">Submit</button>
-                  </div>
-                </div>
-              </form>
-            </div>
-            <div class="col s7">
-                <table class="responsive-table highlight">
-                    <thead>
-                      <tr>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th></th>
-                      </tr>
-                    </thead>
-                    <tr *ngFor="let post of postService.post">
-                      <td>{{post.title}}</td>
-                      <td>{{post.description}}</td>
-                      <td>
-                          <a class="action-btn" (click)="onEdit(post)">
-                            <i class="material-icons">edit</i>
-                          </a>
-                          <a class="action-btn" (click)="onDelete(post._id,postForm)">
-                            <i class="material-icons">delete</i>
-                          </a>
-                        </td>
-                    </tr>
-                  </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  
+<div id = "container">
+
+  <div id = "left">
+
+    <form #postForm="ngForm" (ngSubmit)="onSubmit(postForm)">
+
+      <input type="text" name="title" #name="ngModel" [(ngModel)]="model.title" placeholder="Enter post title" required>
+      <input type="text" name="description" #name="ngModel" [(ngModel)]="model.description" placeholder="Description">
+      <button type="button" (click)="resetForm(postForm)">Reset</button>
+      <button type="submit" [disabled]="!postForm.valid">Submit</button>
+
+    </form>
+
   </div>
+
+  <div id = "right">
+
+    <table class="responsive-table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tr *ngFor="let post of postService.post">
+        <td>{{post.title}}</td>
+        <td>{{post.description}}</td>
+        <td>
+            <a class="action-btn" (click)="onEdit(post)">
+              <i class="material-icons">edit</i>
+            </a>
+            <a class="action-btn" (click)="onDelete(post._id,postForm)">
+              <i class="material-icons">delete</i>
+            </a>
+          </td>
+      </tr>
+    </table>
+
+  </div>
+
+</div>
