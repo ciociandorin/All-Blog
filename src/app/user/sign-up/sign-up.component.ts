@@ -108,9 +108,11 @@ export class SignUpComponent implements OnInit {
       err => {
         if (err.status === 422) {
           this.serverErrorMessages = err.error.join('<br/>');
+          console.log("serverErrorMessages")
         }
         else
           this.serverErrorMessages = 'Something went wrong. Please contact admin.';
+          console.log("serverErrorMessages")
       }
     );
   }
