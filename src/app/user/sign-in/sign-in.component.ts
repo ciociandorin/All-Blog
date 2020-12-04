@@ -115,8 +115,12 @@ export class SignInComponent implements OnInit {
         this.router.navigateByUrl('/home');
       },
       err => {
-        if(err.error.message = 'Wrong password')
+        if(err.error.message = 'Wrong password.') {
           this.serverErrorMessagesPassword = err.error.message;
+          gsap.to("#alertWrapper", {
+            display: "block"
+          });
+        }
         else
           this.serverErrorMessagesId = err.error.message;
 

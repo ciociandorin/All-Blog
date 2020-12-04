@@ -144,6 +144,31 @@ body {
     border-radius: 10px;
 }
 
+#alertWrapper {
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    left: 93%;
+    height: 50px;
+    width: 280px;
+    white-space: nowrap;
+    background-color: #FF5154;
+    border-radius: 10px;
+    z-index: -1;
+    display: none;
+    color: #f3f3f3;
+    font-family: mont-regular;
+    font-size: 20px;
+}
+
+.alert {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
 ::placeholder {
     color: #a9a9a9;
 }

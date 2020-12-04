@@ -41,8 +41,12 @@
 
           </div>
 
-          <div class="alert" *ngIf="serverErrorMessagesPassword">
-            {{serverErrorMessagesPassword}}
+          <div id = "alertWrapper">
+
+            <div class="alert" *ngIf="serverErrorMessagesPassword">
+              {{serverErrorMessagesPassword}}
+            </div>
+
           </div>
 
           <div class="alert" *ngIf="serverErrorMessagesId">
