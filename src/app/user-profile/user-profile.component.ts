@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../shared/user.service';
 import { Router } from "@angular/router";
 import { gsap } from 'gsap';
-import { bindCallback } from 'rxjs';
 
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.css']
 })
+
 export class UserProfileComponent implements OnInit {
 
   userDetails: any;
@@ -22,21 +22,13 @@ export class UserProfileComponent implements OnInit {
       duration: 1
     });
 
-    gsap.to("#first", {
+    gsap.to(".upper-block", {
       top: "40%",
-      height: "60%",
       ease: "expo.inOut",
-      duration: 2,
+      duration: 1.5,
+      stagger: 0.2,
       delay: 0.6
-    });
-
-    gsap.to("#second", {
-      top: "40%",
-      height: "60%",
-      ease: "expo.inOut",
-      duration: 2,
-      delay: 0.8
-    });
+  });
 
     gsap.from("#title", {
       top: "100px",
@@ -76,7 +68,6 @@ export class UserProfileComponent implements OnInit {
 
     gsap.to("#logoutWrapper", {
       backgroundColor: "white",
-      // ease: "expo.inOut",
       duration: 0.3
     });
   
@@ -100,7 +91,6 @@ export class UserProfileComponent implements OnInit {
 
     gsap.to("#logoutWrapper", {
       backgroundColor: "black",
-      // ease: "expo.inOut",
       duration: 0.3
     });
   
