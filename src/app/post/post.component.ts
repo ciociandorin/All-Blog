@@ -16,7 +16,7 @@ declare var M: any;
 export class PostComponent implements OnInit {
   
   userDetails: any;
-  constructor(public postService: PostService,private userService: UserService, private router: Router) { }
+  constructor(public postService: PostService, private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
 

@@ -3,12 +3,15 @@ export class Post {
     title: string = '';
     description: string = '';
     post_by: string = '';
+    create_on: string = '';
     comment: Array<Comment> = [];
     
 }
 
 export class Comment{
     comment: string = "";
+    post_by: string = '';
+    create_on: string = '';
 }
 
 // var Post = mongoose.model('Post', {

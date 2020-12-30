@@ -48,7 +48,12 @@
 
                 <div class = "title">{{post.title}}</div>
                 <div class = "description">{{post.description}}</div>
-                <li *ngFor="let comment of post.comment">{{comment.comment}}</li>
+                <div>{{post.post_by}}</div>
+                <div>{{post.create_on}}</div>
+                <li *ngFor="let comment of post.comment">{{comment.comment}}
+                    {{comment.post_by}}
+                    {{comment.create_on}}
+                </li>
 
                 <form #postComment="ngForm" (ngSubmit)="onSubmit(post._id,postComment)">
       

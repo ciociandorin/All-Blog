@@ -64,6 +64,7 @@ router.put('/comment/:id', (req, res) => {
     
     var comment = {
         comment: req.body.comment,
+        post_by: req.body.post_by
     };
 
     var post = {

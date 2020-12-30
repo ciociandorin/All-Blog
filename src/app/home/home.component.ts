@@ -3,6 +3,8 @@ import { Post, Comment } from './../shared/post.model';
 import { PostService } from './../shared/post.service';
 import { NgForm } from '@angular/forms';
 import { gsap } from 'gsap';
+import { UserService } from '../shared/user.service';
+import { Router } from '@angular/router';
 
 declare var M: any;
 
@@ -14,11 +16,13 @@ declare var M: any;
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public postService: PostService) { }
+  userDetails: any;
+  constructor(public postService: PostService, private userService: UserService, private router: Router) { }
 
   model = {
     _id: '',
-    comment: ''
+    comment: '',
+    post_by: ''
   };
 
   ngOnInit(): void {
@@ -39,6 +43,16 @@ export class HomeComponent implements OnInit {
 
     this.refreshPostList();
     this.resetForm();
+
+    this.userService.getUserProfile().subscribe(
+      res => {
+        this.userDetails = res['user'];
+        console.log(this.userDetails);
+      },
+      err => { 
+        console.log(err);
+      }
+    ); 
   }
 
   fOn1():void {
@@ -116,7 +130,8 @@ export class HomeComponent implements OnInit {
       form.reset();
     this.model = {
       _id: "",
-      comment: ""
+      comment: "",
+      post_by: ""
     }
   }
 
@@ -138,6 +153,7 @@ export class HomeComponent implements OnInit {
   // }
 
   onSubmit(_id: string, form: NgForm){
+    form.value.post_by=this.userDetails.username;
     form.value._id=_id;
     console.log(form.value._id);
     console.log(form.value);
