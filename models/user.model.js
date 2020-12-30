@@ -16,10 +16,9 @@ var userSchema = new mongoose.Schema({
         type: String,
         require: 'Password can\'t be empty.',
         minlength : [4, 'Password must be a least 4 characters long.']
-
     },
-    sublist:{
-        type: Array
+    create_on: {
+        type: Date, default: Date.now
     },
     saltSecret: String
 });
