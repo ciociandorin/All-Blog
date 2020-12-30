@@ -36,4 +36,8 @@ export class PostService {
     return this.http.delete(this.baseURL + `/${_id}`);
   }
 
+  putComment(post: Post) {
+    return this.http.put(this.baseURL + `comment/${post._id}`, post);
+  }
+
 }

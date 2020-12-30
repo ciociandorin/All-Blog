@@ -4,6 +4,8 @@ import { PostService } from './../shared/post.service';
 import { NgForm } from '@angular/forms';
 import { gsap } from 'gsap';
 
+declare var M: any;
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -101,6 +103,37 @@ export class HomeComponent implements OnInit {
     this.postService.getPostList().subscribe((res) => {
       this.postService.post = res as Post[];
     }); 
+  }
+
+  model = {
+    _id: '',
+    description: ''
+  };
+
+  resetForm(form?: NgForm) {
+    if (form)
+      form.reset();
+    this.model = {
+      _id: "",
+      description: ""
+    }
+  }
+
+  onSubmit(form: NgForm) {
+    if (form.value._id == "") {
+      this.postService.putPost(form.value).subscribe((res) => {
+        this.resetForm(form);
+        this.refreshPostList();
+        M.toast({ html: 'Saved successfully', classes: 'rounded' });
+      });
+    }
+    else {
+      this.postService.putPost(form.value).subscribe((res) => {
+        this.resetForm(form);
+        this.refreshPostList();
+        M.toast({ html: 'Updated successfully', classes: 'rounded' });
+      });
+    }
   }
 
   

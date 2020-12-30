@@ -48,6 +48,16 @@
 
                 <div class = "title">{{post.title}}</div>
                 <div class = "description">{{post.description}}</div>
+                <li *ngFor="let comment of post.comment">{{comment.comment}}</li>
+
+                <form #postComment="ngForm" (ngSubmit)="onSubmit(postComment)">
+      
+                    <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="model._id">
+                    <input type="text" name="description" #name="ngModel" [(ngModel)]="model.description" placeholder="Description">
+                    <button type="button" (click)="resetForm(postComment)">Reset</button>
+                    <button type="submit" [disabled]="!postComment.valid">Submit</button>
+              
+                </form>
 
             </div>
 

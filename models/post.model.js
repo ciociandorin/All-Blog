@@ -1,14 +1,5 @@
 const mongoose = require('mongoose');
 
-// var Post = mongoose.model('Post', {
-//     title: { type: String },
-//     description: { type: String }   
-//     // aici adaugat
-// });
-
-// module.exports = { Post };
-
-
 var Post = mongoose.model('Post', {
     title: { type: String },
     description: { type: String },
