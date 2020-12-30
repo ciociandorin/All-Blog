@@ -4,36 +4,36 @@ var ObjectId = require('mongoose').Types.ObjectId;
 
 var { Post } = require('../models/post.model.js'); 
 
-router.get('/', (req, res) => {
-    Post.find((err, docs) => {
+router.get('/', async (req, res) => {
+    await Post.find((err, docs) => {
         if (!err) { res.send(docs); }
         else { console.log('Error in Retriving Posts :' + JSON.stringify(err, undefined, 2)); }
     });
 });
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
     var post = new Post({
         title: req.body.title,
         description: req.body.description,
         post_by : req.body.post_by
     });
-    post.save((err, doc) => {
+    await post.save((err, doc) => {
         if (!err) { res.send(doc); }
         else { console.log('Error in Post Save :' + JSON.stringify(err, undefined, 2)); }
     });
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', async (req, res) => {
     if (!ObjectId.isValid(req.params.id))
         return res.status(400).send(`No record with given id : ${req.params.id}`);
 
-    Post.findById(req.params.id, (err, doc) => {
+    await Post.findById(req.params.id, (err, doc) => {
         if (!err) { res.send(doc); }
         else { console.log('Error in Retriving Post :' + JSON.stringify(err, undefined, 2)); }
     });
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', async (req, res) => {
     if (!ObjectId.isValid(req.params.id))
         return res.status(400).send(`No record with given id : ${req.params.id}`);
 
@@ -41,23 +41,23 @@ router.put('/:id', (req, res) => {
         title: req.body.title,
         description: req.body.description,
     };
-    Post.findByIdAndUpdate(req.params.id, { $set: post }, { new: true }, (err, doc) => {
+    await Post.findByIdAndUpdate(req.params.id, { $set: post }, { new: true }, (err, doc) => {
         if (!err) { res.send(doc); }
         else { console.log('Error in Post Update :' + JSON.stringify(err, undefined, 2)); }
     });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async (req, res) => {
     if (!ObjectId.isValid(req.params.id))
         return res.status(400).send(`No record with given id : ${req.params.id}`);
 
-    Post.findByIdAndRemove(req.params.id, (err, doc) => {
+    await Post.findByIdAndRemove(req.params.id, (err, doc) => {
         if (!err) { res.send(doc); }
         else { console.log('Error in Post Delete :' + JSON.stringify(err, undefined, 2)); }
     });
 });
 
-router.put('/comment/:id', (req, res) => {
+router.put('/comment/:id', async (req, res) => {
     if (!ObjectId.isValid(req.params.id))
         return res.status(400).send(`No record with given id : ${req.params.id}`);
     
@@ -72,16 +72,16 @@ router.put('/comment/:id', (req, res) => {
 
     console.log(comment);
     console.log(req.params);
-    Post.findByIdAndUpdate(req.params.id, { $push: post }, { new: true }, (err, doc) => {
+    await Post.findByIdAndUpdate(req.params.id, { $push: post }, { new: true }, (err, doc) => {
         if (!err) { res.send(doc); }
         else { console.log('Error in Post Update :' + JSON.stringify(err, undefined, 2)); }
     });
 });
 
-router.get('/list/:username', function (req , res){
+router.get('/list/:username', async (req , res) => {
     var username = req.params.username;
     console.log(username);
-    Post.find({
+    await Post.find({
       "post_by": username
     }, function(err,docs){
       console.log(docs);
