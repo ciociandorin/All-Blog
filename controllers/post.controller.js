@@ -15,7 +15,7 @@ router.post('/', (req, res) => {
     var post = new Post({
         title: req.body.title,
         description: req.body.description,
-        
+
         // aici adaugat
         
     });
@@ -63,11 +63,18 @@ router.delete('/:id', (req, res) => {
 router.put('/comment/:id', (req, res) => {
     if (!ObjectId.isValid(req.params.id))
         return res.status(400).send(`No record with given id : ${req.params.id}`);
-
+    
     var comment = {
         comment: req.body.comment,
     };
-    Post.findByIdAndUpdate(req.params.id, { $push: comment }, { new: true }, (err, doc) => {
+
+    var post = {
+        comment 
+    };
+
+    console.log(comment);
+    console.log(req.params);
+    Post.findByIdAndUpdate(req.params.id, { $push: post }, { new: true }, (err, doc) => {
         if (!err) { res.send(doc); }
         else { console.log('Error in Post Update :' + JSON.stringify(err, undefined, 2)); }
     });

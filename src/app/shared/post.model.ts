@@ -3,6 +3,7 @@ export class Post {
     title: string = '';
     description: string = '';
     comment: Array<Comment> = [];
+    
 }
 
 export class Comment{

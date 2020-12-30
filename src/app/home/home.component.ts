@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Post } from './../shared/post.model';
+import { Post, Comment } from './../shared/post.model';
 import { PostService } from './../shared/post.service';
 import { NgForm } from '@angular/forms';
 import { gsap } from 'gsap';
@@ -139,6 +139,8 @@ export class HomeComponent implements OnInit {
 
   onSubmit(_id: string, form: NgForm){
     form.value._id=_id;
+    console.log(form.value._id);
+    console.log(form.value);
     if (form.value._id == "") {
       this.postService.putComment(form.value).subscribe((res) => {
         this.resetForm(form);
