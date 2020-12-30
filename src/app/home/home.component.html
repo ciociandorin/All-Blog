@@ -52,16 +52,14 @@
 
                 <form #postComment="ngForm" (ngSubmit)="onSubmit(post._id,postComment)">
       
-                    <!-- <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="model._id"> -->
-                    <textarea rows="4" cols="50" name="comment" #name="ngModel" [(ngModel)]="model.comment" placeholder="Comment" required></textarea>
+                    <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="model._id">
+                    <input type="text" name="comment" #name="ngModel" [(ngModel)]="model.comment" placeholder="Comment" required>
                     <button type="button" (click)="resetForm(postComment)">Reset</button>
                     <button type="submit" [disabled]="!postComment.valid">Submit</button>
               
                 </form>
 
             </div>
-
-        <div id = "firstShadow"></div>
 
     </div>
 
