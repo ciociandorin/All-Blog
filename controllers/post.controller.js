@@ -57,7 +57,6 @@ router.delete('/:id', (req, res) => {
     });
 });
 
-
 router.put('/comment/:id', (req, res) => {
     if (!ObjectId.isValid(req.params.id))
         return res.status(400).send(`No record with given id : ${req.params.id}`);
@@ -78,5 +77,16 @@ router.put('/comment/:id', (req, res) => {
         else { console.log('Error in Post Update :' + JSON.stringify(err, undefined, 2)); }
     });
 });
+
+router.get('/list/:username', function (req , res){
+    var username = req.params.username;
+    console.log(username);
+    Post.find({
+      "post_by": username
+    }, function(err,docs){
+      console.log(docs);
+      res.json(docs);
+    });
+  });
 
 module.exports = router;

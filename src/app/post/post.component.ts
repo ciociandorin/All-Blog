@@ -18,10 +18,7 @@ export class PostComponent implements OnInit {
   userDetails: any;
   constructor(public postService: PostService, private userService: UserService, private router: Router) { }
 
-  ngOnInit(): void {
-
-    this.resetForm();
-    this.refreshPostList(); 
+  async ngOnInit(): Promise<void> {
 
     this.userService.getUserProfile().subscribe(
       res => {
@@ -31,7 +28,10 @@ export class PostComponent implements OnInit {
       err => { 
         console.log(err);
       }
-    );     
+    );
+
+    this.resetForm();
+    this.refreshPostList(); 
 
   }
 
@@ -73,7 +73,7 @@ export class PostComponent implements OnInit {
   }
 
   refreshPostList() {
-    this.postService.getPostList().subscribe((res) => {
+    this.postService.getUserPostList(this.userDetails.username).subscribe((res) => {
       this.postService.post = res as Post[];
     });
   }

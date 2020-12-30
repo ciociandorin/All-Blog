@@ -40,4 +40,8 @@ export class PostService {
     return this.http.put(this.baseURL + `/comment/${post._id}`, post);
   }
 
+  getUserPostList(username: string){
+    return this.http.get(this.baseURL + `/list/${username}`);
+  }
+
 }
