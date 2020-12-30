@@ -2,6 +2,8 @@ import { Post } from './../shared/post.model';
 import { PostService } from './../shared/post.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { UserService } from '../shared/user.service';
+import { Router } from '@angular/router';
 
 declare var M: any;
 
@@ -13,19 +15,32 @@ declare var M: any;
 })
 export class PostComponent implements OnInit {
   
+  userDetails: any;
+  constructor(public postService: PostService,private userService: UserService, private router: Router) { }
 
-  constructor(public postService: PostService) { }
+  ngOnInit(): void {
+
+    this.resetForm();
+    this.refreshPostList(); 
+
+    this.userService.getUserProfile().subscribe(
+      res => {
+        this.userDetails = res['user'];
+        console.log(this.userDetails);
+      },
+      err => { 
+        console.log(err);
+      }
+    );     
+
+  }
 
   model = {
     _id: '',
     title: '',
-    description: ''
+    description: '',
+    post_by: ''
   };
-
-  ngOnInit(): void {
-    this.resetForm();
-    this.refreshPostList();
-  }
 
   resetForm(form?: NgForm) {
     if (form)
@@ -33,11 +48,14 @@ export class PostComponent implements OnInit {
     this.model = {
       _id: "",
       title: "",
-      description: ""
+      description: "",
+      post_by: ""
     }
   }
 
-  onSubmit(form: NgForm) {
+  onSubmit(form: NgForm) { 
+    form.value.post_by=this.userDetails.username;
+    console.log(form.value.post_by)
     if (form.value._id == "") {
       this.postService.postPost(form.value).subscribe((res) => {
         this.resetForm(form);

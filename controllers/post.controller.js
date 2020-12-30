@@ -15,9 +15,7 @@ router.post('/', (req, res) => {
     var post = new Post({
         title: req.body.title,
         description: req.body.description,
-
-        // aici adaugat
-        
+        post_by : req.body.post_by
     });
     post.save((err, doc) => {
         if (!err) { res.send(doc); }

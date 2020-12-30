@@ -2,6 +2,7 @@ export class Post {
     _id: string = '';
     title: string = '';
     description: string = '';
+    post_by: string = '';
     comment: Array<Comment> = [];
     
 }
