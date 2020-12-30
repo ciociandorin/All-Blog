@@ -27,6 +27,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { PostComponent } from './post/post.component';
+import { PostpageComponent } from './postpage/postpage.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { PostComponent } from './post/post.component';
     UserProfileComponent,
     SignInComponent,
     HomeComponent,
-    PostComponent
+    PostComponent,
+    PostpageComponent
   ],
   imports: [
     BrowserModule,

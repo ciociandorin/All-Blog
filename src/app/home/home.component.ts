@@ -100,7 +100,9 @@ export class HomeComponent implements OnInit {
   refreshPostList() {
     this.postService.getPostList().subscribe((res) => {
       this.postService.post = res as Post[];
-    });
+    }); 
   }
+
+  
   
 }

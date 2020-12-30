@@ -59,4 +59,18 @@ router.delete('/:id', (req, res) => {
     });
 });
 
+
+router.put('/comment/:id', (req, res) => {
+    if (!ObjectId.isValid(req.params.id))
+        return res.status(400).send(`No record with given id : ${req.params.id}`);
+
+    var comment = {
+        comment: req.body.comment,
+    };
+    Post.findByIdAndUpdate(req.params.id, { $push: comment }, { new: true }, (err, doc) => {
+        if (!err) { res.send(doc); }
+        else { console.log('Error in Post Update :' + JSON.stringify(err, undefined, 2)); }
+    });
+});
+
 module.exports = router;

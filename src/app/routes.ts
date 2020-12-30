@@ -6,6 +6,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './auth/auth.guard';
 import { PostComponent } from './post/post.component';
+import { PostpageComponent } from './postpage/postpage.component';
 
 // add " canActivate:[AuthGuard] " to protected components
 
@@ -29,6 +30,9 @@ export const appRoutes: Routes = [
     },
     {
         path: 'post', component: PostComponent, canActivate:[AuthGuard]
+    },
+    {
+        path: 'postpage', component: PostpageComponent, canActivate:[AuthGuard]
     }
     
 ];
