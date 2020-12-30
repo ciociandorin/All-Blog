@@ -13,6 +13,7 @@ import { RightToLeftAnimationDirective } from './directives/gsap/right-to-left-a
 import { TopToBottomDirective2 } from './directives/gsap/top-to-bottom-animation2.directive';
 // forms
 import { FormsModule } from '@angular/forms';
+
 // components
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
@@ -20,14 +21,15 @@ import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
 import { HomeComponent } from './home/home.component';
+import { PostComponent } from './post/post.component';
+import { PostpageComponent } from './postpage/postpage.component';
+
 // routes
 import { appRoutes } from './routes'; 
 
 import { AuthGuard } from './auth/auth.guard';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth/auth.interceptor';
-import { PostComponent } from './post/post.component';
-import { PostpageComponent } from './postpage/postpage.component';
 
 @NgModule({
   declarations: [

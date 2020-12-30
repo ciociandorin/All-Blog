@@ -14,7 +14,7 @@ export class PostService {
 
   selectedPost: Post | undefined;
   post: Post[] | undefined;
-  comment: string | undefined;
+  
   readonly baseURL = 'http://localhost:3000/post';
 
   constructor(private http: HttpClient) { }
@@ -37,7 +37,7 @@ export class PostService {
   }
 
   putComment(post: Post) {
-    return this.http.put(this.baseURL + `comment/${post._id}`, post);
+    return this.http.put(this.baseURL + `/comment/${post._id}`, post);
   }
 
 }

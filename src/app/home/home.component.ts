@@ -16,6 +16,11 @@ export class HomeComponent implements OnInit {
 
   constructor(public postService: PostService) { }
 
+  model = {
+    _id: '',
+    comment: ''
+  };
+
   ngOnInit(): void {
 
     gsap.to("#siteName", {
@@ -33,6 +38,7 @@ export class HomeComponent implements OnInit {
     });
 
     this.refreshPostList();
+    this.resetForm();
   }
 
   fOn1():void {
@@ -105,37 +111,47 @@ export class HomeComponent implements OnInit {
     }); 
   }
 
-  model = {
-    _id: '',
-    description: ''
-  };
-
   resetForm(form?: NgForm) {
     if (form)
       form.reset();
     this.model = {
       _id: "",
-      description: ""
+      comment: ""
     }
   }
 
-  onSubmit(form: NgForm) {
+  // onSubmit(form: NgForm) {
+  //   if (form.value._id == "") {
+  //     this.postService.putComment(form.value).subscribe((res) => {
+  //       this.resetForm(form);
+  //       this.refreshPostList();
+  //       M.toast({ html: 'Saved successfully', classes: 'rounded' });
+  //     });
+  //   }
+  //   else {
+  //     this.postService.putComment(form.value).subscribe((res) => {
+  //       this.resetForm(form);
+  //       this.refreshPostList();
+  //       M.toast({ html: 'Updated successfully', classes: 'rounded' });
+  //     });
+  //   }
+  // }
+
+  onSubmit(_id: string, form: NgForm){
+    form.value._id=_id;
     if (form.value._id == "") {
-      this.postService.putPost(form.value).subscribe((res) => {
+      this.postService.putComment(form.value).subscribe((res) => {
         this.resetForm(form);
         this.refreshPostList();
         M.toast({ html: 'Saved successfully', classes: 'rounded' });
       });
     }
     else {
-      this.postService.putPost(form.value).subscribe((res) => {
+      this.postService.putComment(form.value).subscribe((res) => {
         this.resetForm(form);
         this.refreshPostList();
         M.toast({ html: 'Updated successfully', classes: 'rounded' });
       });
     }
   }
-
-  
-  
 }
