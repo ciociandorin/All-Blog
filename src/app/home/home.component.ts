@@ -135,23 +135,6 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  // onSubmit(form: NgForm) {
-  //   if (form.value._id == "") {
-  //     this.postService.putComment(form.value).subscribe((res) => {
-  //       this.resetForm(form);
-  //       this.refreshPostList();
-  //       M.toast({ html: 'Saved successfully', classes: 'rounded' });
-  //     });
-  //   }
-  //   else {
-  //     this.postService.putComment(form.value).subscribe((res) => {
-  //       this.resetForm(form);
-  //       this.refreshPostList();
-  //       M.toast({ html: 'Updated successfully', classes: 'rounded' });
-  //     });
-  //   }
-  // }
-
   onSubmit(_id: string, form: NgForm){
     form.value.post_by=this.userDetails.username;
     form.value._id=_id;

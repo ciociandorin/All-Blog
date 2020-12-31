@@ -57,7 +57,7 @@ router.delete('/:id', async (req, res) => {
     });
 });
 
-router.put('/comment/:id', async (req, res) => {
+router.put('/comment/:id', (req, res) => {
     if (!ObjectId.isValid(req.params.id))
         return res.status(400).send(`No record with given id : ${req.params.id}`);
     
@@ -72,7 +72,7 @@ router.put('/comment/:id', async (req, res) => {
 
     console.log(comment);
     console.log(req.params);
-    await Post.findByIdAndUpdate(req.params.id, { $push: post }, { new: true }, (err, doc) => {
+    Post.findByIdAndUpdate(req.params.id, { $push: post }, { new: true }, (err, doc) => {
         if (!err) { res.send(doc); }
         else { console.log('Error in Post Update :' + JSON.stringify(err, undefined, 2)); }
     });

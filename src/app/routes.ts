@@ -32,7 +32,7 @@ export const appRoutes: Routes = [
         path: 'post', component: PostComponent, canActivate:[AuthGuard]
     },
     {
-        path: 'postpage', component: PostpageComponent, canActivate:[AuthGuard]
+        path: 'postpage/:id', component: PostpageComponent, canActivate:[AuthGuard]
     }
     
 ];

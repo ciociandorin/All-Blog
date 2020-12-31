@@ -46,7 +46,7 @@
 
             <div id = "first">
 
-                <div class = "title">{{post.title}}</div>
+                <div class = "title" routerLink="/postpage/{{post._id}}" routerLinkActive="active">{{post.title}}</div>
                 <div class = "description">{{post.description}}</div>
                 <div>{{post.post_by}}</div>
                 <div>{{post.create_on}}</div>
@@ -57,7 +57,7 @@
 
                 <form #postComment="ngForm" (ngSubmit)="onSubmit(post._id,postComment)">
       
-                    <!-- <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="model._id"> -->
+                    <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="model._id">
                     <input type="text" name="comment" #name="ngModel" [(ngModel)]="model.comment" placeholder="Comment" required>
                     <button type="button" (click)="resetForm(postComment)">Reset</button>
                     <button type="submit" [disabled]="!postComment.valid">Submit</button>
