@@ -6,27 +6,9 @@
     
     </div>
 
-    <div id = "navBarCenterWrapper">
-
-        <div class = "navBarEl" id = "recWrapper" (mouseenter) = "fOn1()" (mouseleave) = "fOff1()">
-
-            <div id = "rec1">Recommended</div>
-            <div id = "rec2">Recommended</div>
-
-        </div>
-
-        <a href = "Login/login.html"><div class = "navBarEl" id = "subWrapper" (mouseenter) = "fOn2()" (mouseleave) = "fOff2()">
-
-            <div id = "sub1">Subscribed</div>
-            <div id = "sub2">Subscribed</div>
-
-        </div></a>
-
-    </div>
-
     <ul id = "navBarMenu">
 
-        <li class = "navBarEl" ><a routerLink="/userprofile" routerLinkActive="active">My account</a></li>
+        <li class = "navBarEl"><a routerLink="/userprofile" routerLinkActive="active">My account</a></li>
         <li class = "navBarEl"><a routerLink="/post" routerLinkActive="active">Post</a></li>
         <li class = "navBarEl"><a routerLink="/login" routerLinkActive="active">Login</a></li>
 
@@ -36,7 +18,7 @@
 
 <div *ngFor="let post of postService.post">
 
-    <div id = "firstWrapper"
+    <div id = "postWrapper"
 
         rightToLeftAnimation
         [duration]="1"
@@ -44,31 +26,33 @@
 
     >
 
-            <div id = "first">
+            <div id = "post">
 
-                <div class = "title" routerLink="/postpage/{{post._id}}" routerLinkActive="active">{{post.title}}</div>
-                <div class = "description">{{post.description}}</div>
-                <div>{{post.post_by}}</div>
-                <div>{{post.create_on}}</div>
-                <li *ngFor="let comment of post.comment">{{comment.comment}}
-                    {{comment.post_by}}
-                    {{comment.create_on}}
-                </li>
+                <div id = "postContent">
 
-                <form #postComment="ngForm" (ngSubmit)="onSubmit(post._id,postComment)">
-      
-                    <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="model._id">
-                    <input type="text" name="comment" #name="ngModel" [(ngModel)]="model.comment" placeholder="Comment" required>
-                    <button type="button" (click)="resetForm(postComment)">Reset</button>
-                    <button type="submit" [disabled]="!postComment.valid">Submit</button>
-              
-                </form>
+                    <div class = "title" routerLink="/postpage/{{post._id}}" routerLinkActive="active">{{post.title}}</div>
+                    <div class = "description">{{post.description}}</div>
+
+                    <div class = "detail">Post by: {{post.post_by}}</div>
+                    <div class = "detail">Created on: {{post.create_on}}</div>
+                    <li *ngFor="let comment of post.comment">{{comment.comment}}
+                        {{comment.post_by}}
+                        {{comment.create_on}}
+                    </li>
+
+                    <form #postComment="ngForm" (ngSubmit)="onSubmit(post._id,postComment)">
+        
+                        <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="model._id">
+                        <input type="text" name="comment" #name="ngModel" [(ngModel)]="model.comment" placeholder="Comment" required>
+                        <button type="button" (click)="resetForm(postComment)">Reset</button>
+                        <button type="submit" [disabled]="!postComment.valid">Submit</button>
+                
+                    </form>
+
+                </div>
 
             </div>
 
     </div>
 
 </div>
-
-
-
