@@ -28,26 +28,13 @@
 
             <div id = "post">
 
-                <div id = "postContent">
+                <div id = "postContent" routerLink="/postpage/{{post._id}}" routerLinkActive="active">
 
-                    <div class = "title" routerLink="/postpage/{{post._id}}" routerLinkActive="active">{{post.title}}</div>
+                    <div class = "title">{{post.title}}</div>
                     <div class = "description">{{post.description}}</div>
 
                     <div class = "detail">Post by: {{post.post_by}}</div>
                     <div class = "detail">Created on: {{post.create_on}}</div>
-                    <li *ngFor="let comment of post.comment">{{comment.comment}}
-                        {{comment.post_by}}
-                        {{comment.create_on}}
-                    </li>
-
-                    <form #postComment="ngForm" (ngSubmit)="onSubmit(post._id,postComment)">
-        
-                        <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="model._id">
-                        <input type="text" name="comment" #name="ngModel" [(ngModel)]="model.comment" placeholder="Comment" required>
-                        <button type="button" (click)="resetForm(postComment)">Reset</button>
-                        <button type="submit" [disabled]="!postComment.valid">Submit</button>
-                
-                    </form>
 
                 </div>
 

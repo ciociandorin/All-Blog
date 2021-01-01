@@ -40,3 +40,84 @@ th{
 td{
     font-family: mont-regular;
 }
+#navBar {
+    width: 100%;
+    height: 63px;
+    background-color: #f3f3f3;
+    position: relative;
+}
+
+#siteNameWrapper {
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    transform: translateY(-50%);
+    overflow: hidden;
+    width: 77px;
+    height: 26px;
+    white-space: nowrap;
+}
+
+#siteName {
+    font-size: 20px;
+    font-family: mont-bold;
+    position: absolute;
+    left: -77px;
+}
+
+#navBarMenu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: absolute;
+    right: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#navBarMenu li {
+    display: inline-block;
+    margin-left: 50px;
+    font-family: mont-regular;
+}
+
+#navBarMenu a {
+    text-decoration: none;
+    color: black;
+}
+
+#postWrapper {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+#post {
+    width: 100%;
+    height: auto;
+    background-color: #262322;
+    overflow: hidden;
+    position: relative;
+}
+
+#postContent {
+    margin: 50px 0px 50px 30px;
+    /* border: 1px solid red; */
+}
+
+.title {
+    font-family: mont-bold;
+    font-size: 50px;
+    color: #f3f3f3;
+}
+
+.description {
+    font-family: mont-regular;
+    font-size: 20px;
+    color: #f3f3f3;
+}
+
+.detail {
+    font-family: mont-regular;
+    color: #f3f3f3;
+}

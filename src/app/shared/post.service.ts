@@ -44,4 +44,8 @@ export class PostService {
     return this.http.get(this.baseURL + `/list/${username}`);
   }
 
+  getPost(_id: string) {
+    return this.http.get(this.baseURL + `/${_id}`);
+  }
+
 }

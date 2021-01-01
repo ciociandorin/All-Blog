@@ -81,12 +81,20 @@ router.put('/comment/:id', (req, res) => {
 router.get('/list/:username', async (req , res) => {
     var username = req.params.username;
     console.log(username);
-    await Post.find({
-      "post_by": username
-    }, function(err,docs){
-      console.log(docs);
-      res.json(docs);
-    });
+    if (username == "admin"){
+        await Post.find(function(err,docs){
+            console.log(docs);
+            res.json(docs);
+          });       
+    }
+    else{
+        await Post.find({
+            "post_by": username
+          }, function(err,docs){
+            console.log(docs);
+            res.json(docs);
+          });
+    }
   });
 
 module.exports = router;

@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { UserService } from '../shared/user.service';
 import { Router } from '@angular/router';
+import { gsap } from 'gsap';
 
 declare var M: any;
 
@@ -19,6 +20,20 @@ export class PostComponent implements OnInit {
   constructor(public postService: PostService, private userService: UserService, private router: Router) { }
 
   async ngOnInit(): Promise<void> {
+
+    gsap.to("#siteName", {
+      left: 0,
+      ease: "power4.inOut",
+      duration: 1
+    });
+    
+    gsap.from(".navBarEl", {
+        opacity: 0,
+        ease: "power4.inOut",
+        duration: 0.7,
+        delay: 0.5,
+        stagger: 0.2
+    });
     
     this.userService.getUserProfile().subscribe(
       res => {
