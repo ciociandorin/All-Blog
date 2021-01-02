@@ -6,12 +6,24 @@
 
 # All-Blog
 ## Web technologies project
+### 
+
+Blog platform similar to Google Blogger or Medium. Content creators can manage posts: create a new post, delete an existing one, or edit. Also, each post have a comments section. The blog application also implement the functions social (share button for Facebook / Twitter), as well as an integration with RSS feeds.
+
+### Built With
+
+* [Angular](https://angular.io/)
+* [Node.js](https://nodejs.org/en/)
+* [Expres](https://expressjs.com/)
+* [MongoBD](https://www.mongodb.com/)
 
 ### Features:
 * Register
 * Login
 * CRUD Operation
 * GSAP Animation
+* Share API
+* JWT
 
 ### Pre-requisites:
 * git - [Installation guide](https://www.linode.com/docs/development/version-control/how-to-install-git-on-linux-mac-and-windows/) .  
