@@ -51,7 +51,11 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     AppRoutingModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
+<<<<<<< Updated upstream
     HttpClientModule,
+=======
+    HttpClientModule
+>>>>>>> Stashed changes
   ],
   providers: [
     {
