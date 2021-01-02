@@ -29,11 +29,11 @@ node app.js / nodemon app.js
 
 [contributors-shield]: https://img.shields.io/github/contributors/ciociandorin/All-Blog.svg?style=for-the-badge
 [contributors-url]: https://github.com/ciociandorin/All-Blog/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
+[forks-shield]: https://img.shields.io/github/forks/ciociandorin/All-Blog.svg?style=for-the-badge
+[forks-url]: https://github.com/ciociandorin/All-Blog/network/members
+[stars-shield]: https://img.shields.io/github/stars/ciociandorin/All-Blog.svg?style=for-the-badge
+[stars-url]: https://github.com/ciociandorin/All-Blog/stargazers
+[issues-shield]: https://img.shields.io/github/issues/ciociandorin/All-Blog.svg?style=for-the-badge
+[issues-url]: https://github.com/ciociandorin/All-Blog/issues
+[license-shield]: https://img.shields.io/github/license/ciociandorin/All-Blog.svg?style=for-the-badge
+[license-url]: https://github.com/ciociandorin/All-Blog/LICENSE.txt
