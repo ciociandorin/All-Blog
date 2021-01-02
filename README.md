@@ -1,13 +1,14 @@
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+
 # All-Blog
 ## Web technologies project
-### Team members:
-* [Alex Davidoiu](https://github.com/allexhhh)
-* [Dorin Ciocian](https://github.com/ciociandorin)
-* [Larisa Draganescu](https://github.com/LaraDraganescu)
 
 ### Features:
 * Register
-** Passwor hash
 * Login
 * CRUD Operation
 * GSAP Animation
@@ -24,6 +25,4 @@ git clone https://github.com/ciociandorin/All-Blog
 ng serve -o
 node app.js / nodemon app.js
 ```
-
-
 ![alt text](https://miro.medium.com/max/825/0*P9YZRA4H7jlrjRS3.png)
