@@ -21,6 +21,7 @@ export class PostComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
 
+    // gsap animation
     gsap.to("#siteName", {
       left: 0,
       ease: "power4.inOut",
@@ -34,7 +35,8 @@ export class PostComponent implements OnInit {
         delay: 0.5,
         stagger: 0.2
     });
-    
+
+    // GET user data
     this.userService.getUserProfile().subscribe(
       res => {
         this.userDetails = res['user'];
@@ -51,17 +53,20 @@ export class PostComponent implements OnInit {
 
   }
 
+  // delay function
   delay(ms: number) {
     return new Promise( resolve => setTimeout(resolve, ms) );
   }
 
+  // post form model
   model = {
     _id: '',
     title: '',
     description: '',
     post_by: ''
   };
-
+  
+  // reset form
   async resetForm(form?: NgForm) {
     if (form)
       form.reset();
@@ -73,6 +78,7 @@ export class PostComponent implements OnInit {
     }
   }
 
+  // POST post / UPDATE post
   onSubmit(form: NgForm) { 
     form.value.post_by=this.userDetails.username;
     console.log(form.value.post_by)
@@ -92,6 +98,7 @@ export class PostComponent implements OnInit {
     }
   }
 
+  // GET all user posts
   async refreshPostList() {
     await this.delay(1000);
     this.postService.getUserPostList(this.userDetails.username).subscribe((res) => {
@@ -100,10 +107,12 @@ export class PostComponent implements OnInit {
     });
   }
 
+  // put data in form for UPDATE
   onEdit(post: Post) {
     this.model = post;
   }
 
+  // DELET post
   onDelete(_id: string, form: NgForm) {
     if (confirm('Are you sure to delete this record ?') == true) {
       this.postService.deletePost(_id).subscribe((res) => {

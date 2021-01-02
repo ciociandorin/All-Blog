@@ -1,9 +1,9 @@
-const passport = require('passport');
+const passport = require('passport'); // passport
 const localStrategy = require('passport-local').Strategy;
-const mongoose = require('mongoose');
+const mongoose = require('mongoose'); // mongobd
+var User = mongoose.model('User');    // user model
 
-var User = mongoose.model('User');
-
+// check if email exists
 passport.use(
     new localStrategy({ usernameField: 'email' },
         (username, password, done) => {

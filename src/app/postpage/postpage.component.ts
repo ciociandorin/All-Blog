@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Post, Comment } from './../shared/post.model';
+import { Post } from './../shared/post.model';
 import { PostService } from './../shared/post.service';
 import { NgForm } from '@angular/forms';
 import { gsap } from 'gsap';
 import { UserService } from '../shared/user.service';
-import { ShareModule } from 'ngx-sharebuttons';
 
 declare var M: any;
 
@@ -19,17 +18,19 @@ export class PostpageComponent implements OnInit {
   postid ="";
   constructor(private router: ActivatedRoute, public postService: PostService, private userService: UserService) { }
 
+  // comment form model
   model = {
     _id: '',
     comment: '',
     post_by: ''
   };
+
   userDetails: any;
   post : any;
 
   ngOnInit(): void {
-    console.log(this.router.snapshot.params);
 
+    // gsap animation
     gsap.to("#siteName", {
       left: 0,
       ease: "power4.inOut",
@@ -47,8 +48,7 @@ export class PostpageComponent implements OnInit {
     this.refreshPostList();
     this.resetForm();
 
-    console.log("Test");
-
+    // GET user data
     this.userService.getUserProfile().subscribe(
       res => {
         this.userDetails = res['user'];
@@ -60,12 +60,14 @@ export class PostpageComponent implements OnInit {
     ); 
   }
 
+  // GET post (1 post)
   refreshPostList() {
     this.postService.getPost(this.router.snapshot.params.id).subscribe((res) => {
       this.post = res as Post[];
     }); 
   }
 
+  // reset form
   resetForm(form?: NgForm) {
     if (form)
       form.reset();
@@ -76,6 +78,7 @@ export class PostpageComponent implements OnInit {
     }
   }
 
+  // POST comment
   onSubmit(_id: string, form: NgForm){
     form.value.post_by=this.userDetails.username;
     form.value._id=_id;

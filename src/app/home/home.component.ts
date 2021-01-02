@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Post, Comment } from './../shared/post.model';
+import { Post } from './../shared/post.model';
 import { PostService } from './../shared/post.service';
 import { gsap } from 'gsap';
 import { Router } from '@angular/router';
-
-declare var M: any;
 
 @Component({
   selector: 'app-home',
@@ -14,12 +12,11 @@ declare var M: any;
 })
 export class HomeComponent implements OnInit {
 
-  userDetails: any;
   constructor(public postService: PostService, private router: Router) { }
-
 
   ngOnInit(): void {
 
+    // gsap animation 
     gsap.to("#siteName", {
       left: 0,
       ease: "power4.inOut",
@@ -38,6 +35,7 @@ export class HomeComponent implements OnInit {
 
   }
 
+  // GET all posts
   refreshPostList() {
     this.postService.getPostList().subscribe((res) => {
       this.postService.post = res as Post[];

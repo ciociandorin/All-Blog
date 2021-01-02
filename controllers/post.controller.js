@@ -1,9 +1,9 @@
-const express = require('express');
+const express = require('express'); //expres
 var router = express.Router();
-var ObjectId = require('mongoose').Types.ObjectId;
+var ObjectId = require('mongoose').Types.ObjectId; //mongodb
+var { Post } = require('../models/post.model.js'); // post model
 
-var { Post } = require('../models/post.model.js'); 
-
+// GET all posts
 router.get('/', async (req, res) => {
     await Post.find((err, docs) => {
         if (!err) { res.send(docs); }
@@ -11,6 +11,7 @@ router.get('/', async (req, res) => {
     });
 });
 
+// POST new post
 router.post('/', async (req, res) => {
     var post = new Post({
         title: req.body.title,
@@ -23,6 +24,7 @@ router.post('/', async (req, res) => {
     });
 });
 
+// GET post by id
 router.get('/:id', async (req, res) => {
     if (!ObjectId.isValid(req.params.id))
         return res.status(400).send(`No record with given id : ${req.params.id}`);
@@ -33,6 +35,7 @@ router.get('/:id', async (req, res) => {
     });
 });
 
+// UPDATE post by id
 router.put('/:id', async (req, res) => {
     if (!ObjectId.isValid(req.params.id))
         return res.status(400).send(`No record with given id : ${req.params.id}`);
@@ -47,6 +50,7 @@ router.put('/:id', async (req, res) => {
     });
 });
 
+// DELETE post by id
 router.delete('/:id', async (req, res) => {
     if (!ObjectId.isValid(req.params.id))
         return res.status(400).send(`No record with given id : ${req.params.id}`);
@@ -57,6 +61,7 @@ router.delete('/:id', async (req, res) => {
     });
 });
 
+// PUSH comment to post by id
 router.put('/comment/:id', (req, res) => {
     if (!ObjectId.isValid(req.params.id))
         return res.status(400).send(`No record with given id : ${req.params.id}`);
@@ -78,6 +83,7 @@ router.put('/comment/:id', (req, res) => {
     });
 });
 
+// GET posts by username, if username = "admin" et all posts
 router.get('/list/:username', async (req , res) => {
     var username = req.params.username;
     console.log(username);

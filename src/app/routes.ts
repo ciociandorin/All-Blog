@@ -9,7 +9,7 @@ import { PostComponent } from './post/post.component';
 import { PostpageComponent } from './postpage/postpage.component';
 
 // add " canActivate:[AuthGuard] " to protected components
-
+// routes
 export const appRoutes: Routes = [
     {
         path: "signup", component: UserComponent,

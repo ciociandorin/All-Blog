@@ -1,3 +1,4 @@
+// post class
 export class Post {
     _id: string = '';
     title: string = '';

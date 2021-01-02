@@ -1,9 +1,9 @@
-const mongoose = require('mongoose');
-const passport = require('passport');
-const _ = require('lodash');
+const mongoose = require('mongoose'); //mongodb
+const passport = require('passport'); //passport
+const _ = require('lodash');          // lodash
+const User = mongoose.model("User");  // user model
 
-const User = mongoose.model("User");
-
+// REGISTER
 module.exports.register = (req, res, next) => {
     console.log( 'Inside register fn.' );
     var user = new User();
@@ -24,6 +24,7 @@ module.exports.register = (req, res, next) => {
     });
 }
 
+// AUTHENTICATE and GET JWT
 module.exports.authenticate = (req, res, next) => {
     // call for passport authentication
     passport.authenticate('local', (err, user, info) => {       
@@ -36,6 +37,7 @@ module.exports.authenticate = (req, res, next) => {
     })(req, res);
 }
 
+// GET user data
 module.exports.userProfile = (req, res, next) =>{
     User.findOne({ _id: req._id },
         (err, user) => {

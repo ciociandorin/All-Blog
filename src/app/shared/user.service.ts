@@ -20,20 +20,25 @@ export class UserService {
 
   constructor( private http: HttpClient ) { }
 
+  // POST/REGISTER user
   postUser(user: User){
     return this.http.post(environment.apiBaseUrl+'/register',user, this.noAuthHeader);
   }
 
+  // LOGIN
   login(authCredentials: any) {
     return this.http.post<{token:string}>(environment.apiBaseUrl + '/authenticate', authCredentials, this.noAuthHeader);
   }
 
+  // GET user data
   getUserProfile() {
     return this.http.get<{user:string}>(environment.apiBaseUrl + '/userProfile');
   }
 
 
   //Helper Methods
+
+  // SET, GET, DELET token
 
   setToken(token: string) {
     localStorage.setItem('token', token);
@@ -47,6 +52,7 @@ export class UserService {
     localStorage.removeItem('token');
   }
 
+  // get midel sring fron JWT
   getUserPayload() {
     var token = this.getToken();
     if (token) {
@@ -57,6 +63,7 @@ export class UserService {
       return null;
   }
 
+  // check si JWT is available
   isLoggedIn() {
     var userPayload = this.getUserPayload();
     if (userPayload)

@@ -16,6 +16,7 @@ export class UserProfileComponent implements OnInit {
 
   ngOnInit(): void {
 
+    //GSAP animation
     gsap.to("#siteName", {
       left: 0,
       ease: "power4.inOut",
@@ -65,7 +66,7 @@ export class UserProfileComponent implements OnInit {
     });
 
     
-
+    // GET user data
     this.userService.getUserProfile().subscribe(
       res => {
         this.userDetails = res['user'];
@@ -124,6 +125,7 @@ export class UserProfileComponent implements OnInit {
 
   }
 
+  // DELETE and navigate to login page after logout
   onLogout() {
     this.userService.deleteToken();
     this.router.navigate(['/login']);

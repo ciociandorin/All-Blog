@@ -46,6 +46,7 @@ userSchema.methods.verifyPassword = function (password) {
     return bcrypt.compareSync(password, this.password);
 };
 
+// JWT generate
 userSchema.methods.generateJwt = function () {
     return jwt.sign({ _id: this._id},
         process.env.JWT_SECRET,
