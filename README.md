@@ -7,8 +7,10 @@
 
 ### Features:
 * Register
+** Passwor hash
 * Login
 * CRUD Operation
+* GSAP Animation
 
 ### Pre-requisites:
 * git - [Installation guide](https://www.linode.com/docs/development/version-control/how-to-install-git-on-linux-mac-and-windows/) .  
@@ -20,8 +22,7 @@
 ``` 
 git clone https://github.com/ciociandorin/All-Blog
 ng serve -o
-node app.js
-nodemon app.js
+node app.js / nodemon app.js
 ```
 
 
