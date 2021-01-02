@@ -11,19 +11,6 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
 
-    gsap.to("#siteName", {
-      left: 0,
-      ease: "power4.inOut",
-      duration: 1
-    });
-    
-    gsap.from(".navBarEl", {
-        opacity: 0,
-        ease: "power4.inOut",
-        duration: 0.7,
-        delay: 0.5,
-        stagger: 0.2
-    });
   }
 
 }
