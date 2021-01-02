@@ -36,6 +36,33 @@ export class PostComponent implements OnInit {
         stagger: 0.2
     });
 
+    gsap.from("#left", {
+      top: "100%",
+      ease: "power4.inOut",
+      duration: 1
+    });
+
+    gsap.from("#right", {
+      height: "0%",
+      ease: "power4.inOut",
+      duration: 1
+    });
+
+    gsap.from(".stagger", {
+      opacity: "0",
+      ease: "power4.inOut",
+      duration: 0.5,
+      stagger: 0.15,
+      delay: 0.7
+    });
+
+    gsap.from("table", {
+      opacity: "0",
+      ease: "power4.inOut",
+      duration: 0.5,
+      delay: 0.7
+    });
+
     // GET user data
     this.userService.getUserProfile().subscribe(
       res => {
@@ -124,5 +151,3 @@ export class PostComponent implements OnInit {
   }
 
 }
-
-

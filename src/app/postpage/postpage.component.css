@@ -8,11 +8,6 @@
     font-family: mont-regular;
 }
 
-body { 
-    margin: 0;
-    padding: 0;
-}
-
 #navBar {
     width: 100%;
     height: 63px;
@@ -38,6 +33,11 @@ body {
     left: -77px;
 }
 
+#siteName a {
+    text-decoration: none;
+    color: black;
+}
+
 #navBarMenu {
     padding: 0;
     margin: 0;
@@ -61,30 +61,24 @@ body {
 
 #postWrapper {
     width: 100%;
-    height: auto;
-    cursor: pointer;
-}
-
-#post {
-    width: 100%;
-    height: auto;
-    background-color: #262322;
+    height: 92vh;
+    background-color: black;
     overflow: hidden;
     position: relative;
 }
 
 #postContent {
-    margin: 50px 0px 50px 30px;
+    margin: 50px 30px 50px 30px;
     /* border: 1px solid red; */
 }
 
-.title {
+#title {
     font-family: mont-bold;
     font-size: 50px;
     color: #f3f3f3;
 }
 
-.description {
+#description {
     font-family: mont-regular;
     font-size: 20px;
     color: #f3f3f3;
@@ -93,4 +87,79 @@ body {
 .detail {
     font-family: mont-regular;
     color: #f3f3f3;
+}
+
+form {
+    /* border: 1px solid red; */
+    width: 20%;
+}
+
+#comments {
+    color: #f3f3f3;
+    font-family: mont-regular;
+}
+
+.comment-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    color: #f3f3f3;
+    font-family: mont-regular;
+}
+
+#comment-field {
+    color: #f3f3f3;
+    font-family: mont-regular;
+}
+
+#submit-button, #reset-button {
+    font-family: mont-regular;
+    background: none;
+    color: #f3f3f3;
+    border: none;
+    cursor: pointer;
+    width: 90px;
+    height: 30px;
+    /* border: 1px solid red; */
+    transition: all 0.3s;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+#submit-button:hover {
+    background-color: #f3f3f3;
+    color: black;
+}
+
+#reset-button:hover {
+    background-color: #f3f3f3;
+    color: black;
+}
+
+#fb-button, #tw-button, #li-button {
+    font-family: mont-regular;
+    background: none;
+    color: #f3f3f3;
+    border: none;
+    cursor: pointer;
+    width: 90px;
+    height: 30px;
+    /* border: 1px solid red; */
+    transition: all 0.3s;
+    margin-right: 30px;
+}
+
+#fb-button:hover {
+    background-color: #f3f3f3;
+    color: black;
+}
+
+#tw-button:hover {
+    background-color: #f3f3f3;
+    color: black;
+}
+
+#li-button:hover {
+    background-color: #f3f3f3;
+    color: black;
 }

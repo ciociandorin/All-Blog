@@ -45,6 +45,20 @@ export class PostpageComponent implements OnInit {
         stagger: 0.2
     });
 
+    gsap.from("#postWrapper", {
+      width: "0%",
+      ease: "expo.inOut",
+      duration: 1.5
+    });
+
+    gsap.from("#postContent", {
+      opacity: "0",
+      ease: "power4.inOut",
+      duration: 0.5,
+      stagger: 0.15,
+      delay: 1.5
+    });
+
     this.refreshPostList();
     this.resetForm();
 

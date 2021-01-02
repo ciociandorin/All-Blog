@@ -18,27 +18,17 @@
 
 <div *ngFor="let post of postService.post">
 
-    <div id = "postWrapper"
+    <div class = "post-wrapper">
 
-        rightToLeftAnimation
-        [duration]="1"
-        [delay]="1"
+        <div id = "postContent" routerLink="/postpage/{{post._id}}" routerLinkActive="active">
 
-    >
+            <div class = "title">{{post.title}}</div>
+            <div class = "description">{{post.description}}</div>
 
-            <div id = "post">
+            <div class = "detail">Post by: {{post.post_by}}</div>
+            <div class = "detail">Created on: {{post.create_on}}</div>
 
-                <div id = "postContent" routerLink="/postpage/{{post._id}}" routerLinkActive="active">
-
-                    <div class = "title">{{post.title}}</div>
-                    <div class = "description">{{post.description}}</div>
-
-                    <div class = "detail">Post by: {{post.post_by}}</div>
-                    <div class = "detail">Created on: {{post.create_on}}</div>
-
-                </div>
-
-            </div>
+        </div>
 
     </div>
 

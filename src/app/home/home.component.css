@@ -8,11 +8,6 @@
     font-family: mont-regular;
 }
 
-body { 
-    margin: 0;
-    padding: 0;
-}
-
 #navBar {
     width: 100%;
     height: 63px;
@@ -59,38 +54,38 @@ body {
     color: black;
 }
 
-#postWrapper {
+#container {
+    background-color: black;
+    position: relative;
     width: 100%;
-    height: auto;
-    cursor: pointer;
 }
 
-#post {
+.post-wrapper {
     width: 100%;
     height: auto;
-    background-color: #262322;
+    background-color: #DCDCDD;
     overflow: hidden;
     position: relative;
 }
 
 #postContent {
-    margin: 50px 0px 50px 30px;
-    /* border: 1px solid red; */
+    margin: 50px 30px 50px 30px;
+    cursor: pointer;
 }
 
 .title {
     font-family: mont-bold;
     font-size: 50px;
-    color: #f3f3f3;
+    color: black;
 }
 
 .description {
     font-family: mont-regular;
     font-size: 20px;
-    color: #f3f3f3;
+    color: black;
 }
 
 .detail {
     font-family: mont-regular;
-    color: #f3f3f3;
+    color: black;
 }

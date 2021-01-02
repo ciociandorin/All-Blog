@@ -2,7 +2,7 @@
 
   <div id = "siteNameWrapper">
 
-      <div id = "siteName">All Blog</div>
+    <div id = "siteName"><a routerLink = "/home">All Blog</a></div>
   
   </div>
 
@@ -23,10 +23,10 @@
       
       <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="model._id">
       <input type="hidden" name="post_by" #_id="ngModel" [(ngModel)]="model.post_by">
-      <input type="text" name="title" #name="ngModel" [(ngModel)]="model.title" placeholder="Enter post title" required>
-      <input type="text" name="description" #name="ngModel" [(ngModel)]="model.description" placeholder="Description">
-      <button type="button" (click)="resetForm(postForm)">Reset</button>
-      <button type="submit" [disabled]="!postForm.valid">Submit</button>
+      <input class = "stagger" type="text" name="title" #name="ngModel" [(ngModel)]="model.title" placeholder="Enter post title" required>
+      <input class = "stagger" type="text" name="description" #name="ngModel" [(ngModel)]="model.description" placeholder="Description">
+      <button class = "stagger" id = "submit-button" type="submit" [disabled]="!postForm.valid">Submit</button>
+      <button class = "stagger" id = "reset-button" type="button" (click)="resetForm(postForm)">Reset</button>
 
     </form>
 

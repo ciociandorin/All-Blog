@@ -30,7 +30,6 @@ import { appRoutes } from './routes';
 import { AuthGuard } from './auth/auth.guard';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth/auth.interceptor';
-import { ShareModule } from 'ngx-sharebuttons';
 
 @NgModule({
   declarations: [
@@ -53,7 +52,6 @@ import { ShareModule } from 'ngx-sharebuttons';
     FormsModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
-    ShareModule
   ],
   providers: [
     {

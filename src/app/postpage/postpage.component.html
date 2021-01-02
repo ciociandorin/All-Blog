@@ -1,12 +1,13 @@
   <head>
     <meta property="og:url">
   </head>
-  <div id = "navBar">
+
+<div id = "navBar">
 
     <div id = "siteNameWrapper">
 
-        <div id = "siteName">All Blog</div>
-    
+        <div id = "siteName"><a routerLink = "/home">All Blog</a></div>
+
     </div>
 
     <ul id = "navBarMenu">
@@ -18,44 +19,35 @@
     </ul>
 
 </div>
-  <div id = "postWrapper"
 
-        rightToLeftAnimation
-        [duration]="1"
-        [delay]="1"
+<div id = "postWrapper">
 
-    >
+    <div id = "postContent">
 
-            <div id = "post">
+        <div class = "stagger" id = "title">{{post.title}}</div>
+        <div class =  "stagger" id = "description">{{post.description}}</div>
 
-                <div id = "postContent">
+        <div class = "detail stagger">Post by: {{post.post_by}}</div>
+        <div class = "detail stagger">Created on: {{post.create_on}}</div>
+        <div class = "stagger" id = "comments">Comments:</div>
+        <li class = "comment-list" *ngFor="let comment of post.comment">{{comment.comment}} - 
+            {{comment.post_by}}
+            {{comment.create_on}}
+        </li>
 
-                    <div class = "title">{{post.title}}</div>
-                    <div class = "description">{{post.description}}</div>
+        <form #postComment="ngForm" (ngSubmit)="onSubmit(post._id,postComment)">
 
-                    <div class = "detail">Post by: {{post.post_by}}</div>
-                    <div class = "detail">Created on: {{post.create_on}}</div>
-                    <li *ngFor="let comment of post.comment">{{comment.comment}}
-                        {{comment.post_by}}
-                        {{comment.create_on}}
-                    </li>
+            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="model._id">
+            <input class = "stagger" id = "comment-field" type="text" name="comment" #name="ngModel" [(ngModel)]="model.comment" placeholder="Comment" required>
+            <button class = "stagger" id = "submit-button" type="submit" [disabled]="!postComment.valid">Submit</button>
+            <button class = "stagger" id = "reset-button" type="button" (click)="resetForm(postComment)">Reset</button>
+    
+        </form>
 
-                    <form #postComment="ngForm" (ngSubmit)="onSubmit(post._id,postComment)">
-        
-                        <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="model._id">
-                        <input type="text" name="comment" #name="ngModel" [(ngModel)]="model.comment" placeholder="Comment" required>
-                        <button type="button" (click)="resetForm(postComment)">Reset</button>
-                        <button type="submit" [disabled]="!postComment.valid">Submit</button>
-                
-                    </form>
-
-                    <button shareButton="facebook">FaceBook</button>
-                    <button shareButton="twitter">Twitter</button>
-                    <button shareButton="linkedin">LinkedIn</button>
-
-                </div>
-
-            </div>
+        <button class = "stagger" id = "fb-button" shareButton="facebook">Facebook</button>
+        <button class = "stagger" id = "tw-button" shareButton="twitter">Twitter</button>
+        <button class = "stagger" id = "li-button" shareButton="linkedin">LinkedIn</button>
 
     </div>
 
+</div>
