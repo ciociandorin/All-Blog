@@ -36,4 +36,4 @@ node app.js / nodemon app.js
 [issues-shield]: https://img.shields.io/github/issues/ciociandorin/All-Blog.svg?style=for-the-badge
 [issues-url]: https://github.com/ciociandorin/All-Blog/issues
 [license-shield]: https://img.shields.io/github/license/ciociandorin/All-Blog.svg?style=for-the-badge
-[license-url]: https://github.com/ciociandorin/All-Blog/LICENSE.txt
+[license-url]: https://github.com/ciociandorin/All-Blog/blob/main/LICENSE.txt
