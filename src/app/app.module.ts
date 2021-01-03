@@ -24,6 +24,8 @@ import { HomeComponent } from './home/home.component';
 import { PostComponent } from './post/post.component';
 import { PostpageComponent } from './postpage/postpage.component';
 
+import { ShareModule } from 'ngx-sharebuttons';
+
 // routes
 import { appRoutes } from './routes'; 
 
@@ -52,6 +54,7 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     FormsModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
+    ShareModule
   ],
   providers: [
     {
