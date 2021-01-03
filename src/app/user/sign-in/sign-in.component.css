@@ -56,7 +56,7 @@ body {
 
 #loginText {
     position: absolute;
-    top: 5%;
+    margin-top: 20px;
     left: 50%;
     transform: translateX(-50%);
     font-family: mont-bold;
@@ -71,7 +71,7 @@ body {
     position: absolute;
     text-decoration: none;
     color: black;
-    top: 15%;
+    margin-top: 55px;
     left: 50%;
     transform: translateX(-50%);
     white-space: nowrap;
@@ -166,7 +166,6 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
 }
 
 ::placeholder {
@@ -193,11 +192,12 @@ body {
     font-size: 17px;
     font-family: mont-regular;
     position: absolute;
-    height: 21px;
+    height: 25px;
     width: 200px;
     text-decoration: none;
     color: black;
-    bottom: 5%;
+    margin-bottom: 20px;
+    bottom: 0%;
     left: 50%;
     transform: translateX(-50%);
     white-space: nowrap;
@@ -209,5 +209,5 @@ body {
 }
 
 #pass2 {
-    top: 18px;
+    top: 20px;
 }

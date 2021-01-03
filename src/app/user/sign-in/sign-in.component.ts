@@ -59,7 +59,7 @@ export class SignInComponent implements OnInit {
   funct1():void {
   
     gsap.to("#pass1", {
-        top: "-21px",
+        top: "-25px",
         ease: "power4.inOut",
         duration: 0.28
     });
@@ -81,7 +81,7 @@ export class SignInComponent implements OnInit {
     });
 
     gsap.to("#pass2", {
-      top: "18px",
+      top: "20px",
       ease: "power4.inOut",
       duration: 0.28
     });

@@ -62,7 +62,7 @@ body {
 
 #registerText {
     position: absolute;
-    top: 2%;
+    margin-top: 20px;
     left: 50%;
     transform: translateX(-50%);
     font-family: mont-bold;
@@ -76,7 +76,7 @@ body {
     font-family: mont-regular;
     position: absolute;
     text-decoration: none;
-    top: 9%;
+    margin-top: 55px;
     left: 50%;
     transform: translateX(-50%);
     white-space: nowrap;
@@ -86,9 +86,10 @@ body {
     height: 70%;
     width: 100%;
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
+    /* border: 1px solid black; */
 }
 
 #username, #email, #password, #cnfrmPass {
