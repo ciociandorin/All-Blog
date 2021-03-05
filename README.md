@@ -37,7 +37,7 @@ git clone https://github.com/ciociandorin/All-Blog
 ng serve -o
 node app.js / nodemon app.js
 ```
-![alt text](https://miro.medium.com/max/825/0*P9YZRA4H7jlrjRS3.png)
+![alt text](https://miro.medium.com/max/785/1*jaSIDcOmluf97OKazeaHXg.png)
 
 [contributors-shield]: https://img.shields.io/github/contributors/ciociandorin/All-Blog.svg?style=for-the-badge
 [contributors-url]: https://github.com/ciociandorin/All-Blog/graphs/contributors
