@@ -35,7 +35,6 @@ userSchema.pre('save', function (next){
         bcrypt.hash(this.password, salt, (err, hash) => {
             this.password = hash;
             this.saltSecret = salt;
-            this.sublist = [];
             next();
         });
     });

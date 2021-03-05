@@ -4,7 +4,6 @@ var Post = mongoose.model('Post', {
     title: { type: String },
     description: { type: String },
     post_by: { type: String },
-    url: { type: Number },
     create_on: {type: Date, default: Date.now},
     comment: [{
         comment: { type: String },
@@ -12,4 +11,5 @@ var Post = mongoose.model('Post', {
         create_on: {type: Date, default: Date.now}
       }]
 });
+
 module.exports = { Post };
